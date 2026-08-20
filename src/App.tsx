@@ -77,16 +77,14 @@ export default function App() {
     setUpdatedProofScore(true);
   };
 
-  const showNavbar = currentPage !== 'landing' && currentPage !== 'login' && currentPage !== 'signup' && currentPage !== 'onboarding';
+  const activePage = (!isAuthenticated && !['landing', 'login', 'signup', 'onboarding'].includes(currentPage)) ? 'landing' : currentPage;
+
+  const showNavbar = activePage !== 'landing' && activePage !== 'login' && activePage !== 'signup' && activePage !== 'onboarding';
 
   const renderPage = () => {
     const props = { onNavigate: navigate, showToast };
 
-    if (!isAuthenticated && !['landing', 'login', 'signup', 'onboarding'].includes(currentPage)) {
-      return <LandingPage onNavigate={navigate} />;
-    }
-
-    switch (currentPage) {
+    switch (activePage) {
       case 'landing': return <LandingPage onNavigate={navigate} />;
       case 'login': return <LoginPage onLogin={() => { setIsAuthenticated(true); navigate('dashboard'); }} onNavigate={navigate} />;
       case 'signup': return <SignupPage onSignup={() => { setIsAuthenticated(true); navigate('onboarding'); }} onNavigate={navigate} />;
@@ -110,7 +108,7 @@ export default function App() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f8fafc' }}>
+    <div style={{ minHeight: '100vh', background: '#050505', color: 'white' }}>
       {showNavbar && (
         <Navbar
           onNavigate={navigate}

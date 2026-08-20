@@ -56,7 +56,7 @@ export function Modal({ title, children, onClose, width = 560 }: ModalProps) {
             onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
         >
             <div style={{
-                background: 'white', borderRadius: '16px',
+                background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
                 width: '100%', maxWidth: width,
                 maxHeight: '85vh', overflowY: 'auto',
                 boxShadow: '0 40px 120px rgba(0,0,0,0.2)',
@@ -64,10 +64,10 @@ export function Modal({ title, children, onClose, width = 560 }: ModalProps) {
             }}>
                 <div style={{
                     display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                    padding: '20px 24px', borderBottom: '1px solid #e2e8f0',
-                    position: 'sticky', top: 0, background: 'white', zIndex: 1, borderRadius: '16px 16px 0 0',
+                    padding: '20px 24px', borderBottom: '1px solid rgba(255,255,255,0.05)',
+                    position: 'sticky', top: 0, background: 'rgba(20,20,25,0.8)', zIndex: 1, borderRadius: '16px 16px 0 0',
                 }}>
-                    <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans' }}>{title}</h2>
+                    <h2 style={{ fontSize: '16px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans' }}>{title}</h2>
                     <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#94a3b8', display: 'flex', borderRadius: '6px', padding: '4px' }}>
                         <X size={18} />
                     </button>

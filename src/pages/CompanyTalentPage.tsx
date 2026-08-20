@@ -11,10 +11,10 @@ export default function CompanyTalentPage({ showToast }: CompanyTalentPageProps)
         <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '32px 24px', fontFamily: 'Inter, sans-serif' }}>
             <div style={{ marginBottom: '28px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                 <div>
-                    <h1 style={{ fontSize: '26px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '6px' }}>
+                    <h1 style={{ fontSize: '26px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '6px' }}>
                         Best Builders for Your Problem
                     </h1>
-                    <p style={{ fontSize: '14px', color: '#64748b' }}>
+                    <p style={{ fontSize: '14px', color: '#9ca3af' }}>
                         AI-matched talent for: <strong>AI-powered Customer Research</strong>
                     </p>
                 </div>
@@ -32,7 +32,7 @@ export default function CompanyTalentPage({ showToast }: CompanyTalentPageProps)
                 <div style={{
                     flex: 1, minWidth: '200px',
                     display: 'flex', alignItems: 'center', gap: '10px',
-                    background: 'white', border: '1.5px solid #e2e8f0', borderRadius: '10px', padding: '10px 16px',
+                    background: 'rgba(20,20,25,0.8)', border: '1.5px solid #e2e8f0', borderRadius: '10px', padding: '10px 16px',
                 }}>
                     <Search size={15} color="#94a3b8" />
                     <input placeholder="Search builders..." style={{ border: 'none', background: 'transparent', fontSize: '14px', outline: 'none', flex: 1, fontFamily: 'Inter' }} />
@@ -40,8 +40,8 @@ export default function CompanyTalentPage({ showToast }: CompanyTalentPageProps)
                 {['AI', 'Python', 'Product'].map(f => (
                     <button key={f} style={{
                         padding: '10px 16px', borderRadius: '10px',
-                        border: '1.5px solid #2563eb', background: '#eff6ff',
-                        color: '#2563eb', fontSize: '13px', fontWeight: 600, cursor: 'pointer', fontFamily: 'Inter',
+                        border: '1.5px solid #2563eb', background: 'rgba(109, 40, 217, 0.1)',
+                        color: '#a78bfa', fontSize: '13px', fontWeight: 600, cursor: 'pointer', fontFamily: 'Inter',
                     }}>{f} ✕</button>
                 ))}
                 <button className="btn-ghost" style={{ padding: '10px 14px', fontSize: '13px' }}>
@@ -53,7 +53,7 @@ export default function CompanyTalentPage({ showToast }: CompanyTalentPageProps)
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {mockCompanyTalent.map((talent, i) => (
                     <div key={talent.id} style={{
-                        background: 'white', borderRadius: '16px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
                         border: i === 0 ? '2px solid #10b981' : '1px solid #e2e8f0',
                         padding: '24px', display: 'flex', gap: '20px', alignItems: 'flex-start',
                         boxShadow: i === 0 ? '0 4px 20px rgba(16,185,129,0.08)' : '0 1px 4px rgba(0,0,0,0.04)',
@@ -83,7 +83,7 @@ export default function CompanyTalentPage({ showToast }: CompanyTalentPageProps)
 
                         <div style={{ flex: 1, minWidth: 0 }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px', flexWrap: 'wrap' }}>
-                                <h3 style={{ fontSize: '16px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', margin: 0 }}>
+                                <h3 style={{ fontSize: '16px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', margin: 0 }}>
                                     {talent.name}
                                 </h3>
                                 <span style={{
@@ -95,7 +95,7 @@ export default function CompanyTalentPage({ showToast }: CompanyTalentPageProps)
                                 </span>
                             </div>
 
-                            <div style={{ fontSize: '13px', color: '#64748b', marginBottom: '10px', fontWeight: 500 }}>
+                            <div style={{ fontSize: '13px', color: '#9ca3af', marginBottom: '10px', fontWeight: 500 }}>
                                 {talent.university} · Proof Score: {talent.proofScore}/100
                             </div>
 
@@ -108,8 +108,8 @@ export default function CompanyTalentPage({ showToast }: CompanyTalentPageProps)
                                 padding: '10px 14px', borderRadius: '8px',
                                 background: '#f8fbff', border: '1px solid #e0edff',
                             }}>
-                                <span style={{ fontSize: '12px', color: '#64748b' }}>Relevant Project:</span>
-                                <span style={{ fontSize: '13px', fontWeight: 600, color: '#0f172a' }}>"{talent.project}"</span>
+                                <span style={{ fontSize: '12px', color: '#9ca3af' }}>Relevant Project:</span>
+                                <span style={{ fontSize: '13px', fontWeight: 600, color: 'white' }}>"{talent.project}"</span>
                                 <span style={{ fontSize: '11px', color: '#10b981', fontWeight: 700, marginLeft: 'auto' }}>✓ Verified</span>
                             </div>
                         </div>

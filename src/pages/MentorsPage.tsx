@@ -10,10 +10,10 @@ export default function MentorsPage({ showToast }: MentorsPageProps) {
     return (
         <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 24px', fontFamily: 'Inter, sans-serif' }}>
             <div style={{ marginBottom: '28px' }}>
-                <h1 style={{ fontSize: '26px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '6px' }}>
+                <h1 style={{ fontSize: '26px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '6px' }}>
                     🧑‍🏫 Find a Mentor
                 </h1>
-                <p style={{ color: '#64748b', fontSize: '14px' }}>Personalized mentors matched to your goals and interests</p>
+                <p style={{ color: '#9ca3af', fontSize: '14px' }}>Personalized mentors matched to your goals and interests</p>
             </div>
 
             {/* AI Recommended Banner */}
@@ -26,7 +26,7 @@ export default function MentorsPage({ showToast }: MentorsPageProps) {
                 <div style={{ fontSize: '28px' }}>🤖</div>
                 <div>
                     <div style={{ fontSize: '14px', fontWeight: 700, color: '#1e40af' }}>AI-Recommended Mentors</div>
-                    <div style={{ fontSize: '13px', color: '#64748b' }}>
+                    <div style={{ fontSize: '13px', color: '#9ca3af' }}>
                         Based on your career goal: "Work on AI + hardware products and join an early-stage startup"
                     </div>
                 </div>
@@ -35,7 +35,7 @@ export default function MentorsPage({ showToast }: MentorsPageProps) {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 {mockMentors.map((mentor, i) => (
                     <div key={mentor.id} style={{
-                        background: 'white', borderRadius: '16px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
                         border: i === 0 ? '2px solid #2563eb' : '1px solid #e2e8f0',
                         padding: '28px', transition: 'all 0.2s ease', position: 'relative', overflow: 'hidden',
                     }}
@@ -46,7 +46,7 @@ export default function MentorsPage({ showToast }: MentorsPageProps) {
                             <div style={{
                                 position: 'absolute', top: '16px', right: '16px',
                                 padding: '3px 10px', borderRadius: '999px',
-                                background: '#eff6ff', color: '#2563eb', fontSize: '11px', fontWeight: 700,
+                                background: 'rgba(109, 40, 217, 0.1)', color: '#a78bfa', fontSize: '11px', fontWeight: 700,
                                 border: '1px solid #bfdbfe',
                             }}>⭐ Top Pick</div>
                         )}
@@ -63,7 +63,7 @@ export default function MentorsPage({ showToast }: MentorsPageProps) {
 
                             <div style={{ flex: 1 }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '4px', flexWrap: 'wrap', gap: '8px' }}>
-                                    <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', margin: 0 }}>
+                                    <h3 style={{ fontSize: '18px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', margin: 0 }}>
                                         {mentor.name}
                                     </h3>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#f59e0b', fontWeight: 700, fontSize: '14px' }}>
@@ -71,7 +71,7 @@ export default function MentorsPage({ showToast }: MentorsPageProps) {
                                     </div>
                                 </div>
 
-                                <div style={{ fontSize: '14px', color: '#64748b', marginBottom: '8px' }}>
+                                <div style={{ fontSize: '14px', color: '#9ca3af', marginBottom: '8px' }}>
                                     {mentor.role} · {mentor.company} · {mentor.experience} experience
                                 </div>
 
@@ -89,8 +89,8 @@ export default function MentorsPage({ showToast }: MentorsPageProps) {
                                 </div>
 
                                 <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
-                                    <div style={{ fontSize: '12px', color: '#64748b' }}>
-                                        <span style={{ fontWeight: 700, color: '#0f172a' }}>{mentor.sessions}</span> sessions completed
+                                    <div style={{ fontSize: '12px', color: '#9ca3af' }}>
+                                        <span style={{ fontWeight: 700, color: 'white' }}>{mentor.sessions}</span> sessions completed
                                     </div>
                                     <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#e2e8f0' }} />
                                     <div style={{ fontSize: '12px', color: '#10b981', fontWeight: 600 }}>● Available</div>

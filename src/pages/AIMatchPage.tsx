@@ -18,13 +18,13 @@ export default function AIMatchPage({ onNavigate }: AIMatchPageProps) {
             <div style={{ textAlign: 'center', marginBottom: '40px' }}>
                 <span style={{
                     display: 'inline-block', padding: '4px 14px', borderRadius: '999px',
-                    background: '#eff6ff', color: '#2563eb', fontSize: '12px', fontWeight: 700,
+                    background: 'rgba(109, 40, 217, 0.1)', color: '#a78bfa', fontSize: '12px', fontWeight: 700,
                     letterSpacing: '0.08em', border: '1px solid #bfdbfe', marginBottom: '16px',
                 }}>AI OPPORTUNITY INTELLIGENCE</span>
-                <h1 style={{ fontSize: '32px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '8px' }}>
+                <h1 style={{ fontSize: '32px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '8px' }}>
                     Your Opportunity Intelligence
                 </h1>
-                <p style={{ fontSize: '15px', color: '#64748b' }}>For: AI Research Intern — Vertex AI</p>
+                <p style={{ fontSize: '15px', color: '#9ca3af' }}>For: AI Research Intern — Vertex AI</p>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '24px' }}>
@@ -64,10 +64,10 @@ export default function AIMatchPage({ onNavigate }: AIMatchPageProps) {
 
                 {/* Breakdown */}
                 <div style={{
-                    background: 'white', borderRadius: '20px',
-                    border: '1px solid #e2e8f0', padding: '32px',
+                    background: 'rgba(20,20,25,0.8)', borderRadius: '20px',
+                    border: '1px solid rgba(255,255,255,0.05)', padding: '32px',
                 }}>
-                    <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '24px' }}>
+                    <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '24px' }}>
                         Match Breakdown
                     </h3>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -76,7 +76,7 @@ export default function AIMatchPage({ onNavigate }: AIMatchPageProps) {
                             return (
                                 <div key={item.label}>
                                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '7px' }}>
-                                        <span style={{ fontSize: '13px', fontWeight: 600, color: '#475569' }}>{item.label}</span>
+                                        <span style={{ fontSize: '13px', fontWeight: 600, color: '#d1d5db' }}>{item.label}</span>
                                         <span style={{ fontSize: '14px', fontWeight: 800, color, fontFamily: 'Plus Jakarta Sans' }}>{item.value}%</span>
                                     </div>
                                     <div style={{ height: '8px', background: '#e2e8f0', borderRadius: '999px', overflow: 'hidden' }}>
@@ -95,10 +95,10 @@ export default function AIMatchPage({ onNavigate }: AIMatchPageProps) {
 
             {/* Why this matches you */}
             <div style={{
-                background: 'white', borderRadius: '20px',
-                border: '1px solid #e2e8f0', padding: '32px', marginBottom: '24px',
+                background: 'rgba(20,20,25,0.8)', borderRadius: '20px',
+                border: '1px solid rgba(255,255,255,0.05)', padding: '32px', marginBottom: '24px',
             }}>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '20px' }}>
+                <h3 style={{ fontSize: '17px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '20px' }}>
                     🤖 Why this matches you
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -123,7 +123,7 @@ export default function AIMatchPage({ onNavigate }: AIMatchPageProps) {
                 textAlign: 'center',
             }}>
                 <div style={{ fontSize: '32px', marginBottom: '12px' }}>🎯</div>
-                <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '8px' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '8px' }}>
                     Recommended Next Step
                 </h3>
                 <p style={{ fontSize: '15px', color: '#4338ca', marginBottom: '24px', lineHeight: 1.6 }}>

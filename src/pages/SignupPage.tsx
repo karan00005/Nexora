@@ -25,8 +25,8 @@ export default function SignupPage({ onSignup, onNavigate }: SignupPageProps) {
             background: 'linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%)', fontFamily: 'Inter, sans-serif'
         }}>
             <div style={{
-                background: 'white', padding: '48px', borderRadius: '24px', width: '100%', maxWidth: '480px',
-                boxShadow: '0 20px 40px rgba(0,0,0,0.04)', border: '1px solid #e2e8f0'
+                background: 'rgba(20,20,25,0.8)', padding: '48px', borderRadius: '24px', width: '100%', maxWidth: '480px',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.04)', border: '1px solid rgba(255,255,255,0.05)'
             }}>
                 <div style={{ textAlign: 'center', marginBottom: '24px' }}>
                     <div style={{
@@ -36,14 +36,14 @@ export default function SignupPage({ onSignup, onNavigate }: SignupPageProps) {
                     }}>
                         <span style={{ color: 'white', fontWeight: 800, fontSize: '20px', fontFamily: 'Plus Jakarta Sans' }}>Z</span>
                     </div>
-                    <h1 style={{ fontSize: '24px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '8px' }}>
+                    <h1 style={{ fontSize: '24px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '8px' }}>
                         Create an account
                     </h1>
-                    <p style={{ color: '#64748b', fontSize: '14px' }}>Join the ZUNIVA builder network</p>
+                    <p style={{ color: '#9ca3af', fontSize: '14px' }}>Join the ZUNIVA builder network</p>
                 </div>
 
                 {/* Account Type Toggle */}
-                <div style={{ display: 'flex', background: '#f1f5f9', borderRadius: '12px', padding: '6px', marginBottom: '24px' }}>
+                <div style={{ display: 'flex', background: 'rgba(255,255,255,0.03)', borderRadius: '12px', padding: '6px', marginBottom: '24px' }}>
                     <button
                         type="button"
                         onClick={() => setAccountType('student')}
@@ -76,7 +76,7 @@ export default function SignupPage({ onSignup, onNavigate }: SignupPageProps) {
 
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                     <div>
-                        <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#475569', marginBottom: '8px' }}>
+                        <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#d1d5db', marginBottom: '8px' }}>
                             {accountType === 'student' ? 'Full Name' : 'Company Name'}
                         </label>
                         <input
@@ -90,7 +90,7 @@ export default function SignupPage({ onSignup, onNavigate }: SignupPageProps) {
                     </div>
 
                     <div>
-                        <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#475569', marginBottom: '8px' }}>Email Address</label>
+                        <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#d1d5db', marginBottom: '8px' }}>Email Address</label>
                         <div style={{ position: 'relative' }}>
                             <Mail size={16} color="#94a3b8" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
                             <input
@@ -105,7 +105,7 @@ export default function SignupPage({ onSignup, onNavigate }: SignupPageProps) {
                     </div>
 
                     <div>
-                        <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#475569', marginBottom: '8px' }}>Password</label>
+                        <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#d1d5db', marginBottom: '8px' }}>Password</label>
                         <div style={{ position: 'relative' }}>
                             <Lock size={16} color="#94a3b8" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
                             <input
@@ -124,8 +124,8 @@ export default function SignupPage({ onSignup, onNavigate }: SignupPageProps) {
                     </button>
 
                     <button type="button" onClick={() => onSignup()} style={{
-                        width: '100%', padding: '14px', background: 'white', border: '1px solid #cbd5e1',
-                        borderRadius: '10px', fontSize: '14px', fontWeight: 600, color: '#475569',
+                        width: '100%', padding: '14px', background: 'rgba(20,20,25,0.8)', border: '1px solid #cbd5e1',
+                        borderRadius: '10px', fontSize: '14px', fontWeight: 600, color: '#d1d5db',
                         cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
                         fontFamily: 'Inter'
                     }}>
@@ -134,10 +134,10 @@ export default function SignupPage({ onSignup, onNavigate }: SignupPageProps) {
                     </button>
                 </form>
 
-                <div style={{ textAlign: 'center', marginTop: '24px', fontSize: '14px', color: '#64748b' }}>
+                <div style={{ textAlign: 'center', marginTop: '24px', fontSize: '14px', color: '#9ca3af' }}>
                     Already have an account?{' '}
                     <button onClick={() => onNavigate('login')} style={{
-                        background: 'none', border: 'none', color: '#2563eb', fontWeight: 600, cursor: 'pointer',
+                        background: 'none', border: 'none', color: '#a78bfa', fontWeight: 600, cursor: 'pointer',
                         padding: 0, fontFamily: 'Inter'
                     }}>
                         Log in

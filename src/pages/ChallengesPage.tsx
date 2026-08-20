@@ -18,10 +18,10 @@ export default function ChallengesPage({ onNavigate, showToast }: ChallengesPage
         <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '32px 24px', fontFamily: 'Inter, sans-serif' }}>
             <div style={{ marginBottom: '28px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                 <div>
-                    <h1 style={{ fontSize: '26px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '6px' }}>
+                    <h1 style={{ fontSize: '26px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '6px' }}>
                         🏆 Challenges
                     </h1>
-                    <p style={{ color: '#64748b', fontSize: '14px' }}>Compete, demonstrate skills, and win prizes</p>
+                    <p style={{ color: '#9ca3af', fontSize: '14px' }}>Compete, demonstrate skills, and win prizes</p>
                 </div>
                 <div style={{
                     padding: '8px 16px', borderRadius: '10px',
@@ -37,8 +37,8 @@ export default function ChallengesPage({ onNavigate, showToast }: ChallengesPage
                     const diff = difficultyColors[challenge.difficulty];
                     return (
                         <div key={challenge.id} style={{
-                            background: 'white', borderRadius: '16px',
-                            border: '1px solid #e2e8f0',
+                            background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                            border: '1px solid rgba(255,255,255,0.05)',
                             boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
                             overflow: 'hidden', transition: 'all 0.2s ease',
                         }}
@@ -65,20 +65,20 @@ export default function ChallengesPage({ onNavigate, showToast }: ChallengesPage
                                             <span style={{ padding: '3px 10px', borderRadius: '999px', fontSize: '11px', fontWeight: 700, background: diff.bg, color: diff.text, border: `1px solid ${diff.border}` }}>
                                                 {challenge.difficulty}
                                             </span>
-                                            <span style={{ padding: '3px 10px', borderRadius: '999px', fontSize: '11px', fontWeight: 700, background: '#eff6ff', color: '#2563eb', border: '1px solid #bfdbfe' }}>
+                                            <span style={{ padding: '3px 10px', borderRadius: '999px', fontSize: '11px', fontWeight: 700, background: 'rgba(109, 40, 217, 0.1)', color: '#a78bfa', border: '1px solid #bfdbfe' }}>
                                                 {challenge.domain}
                                             </span>
                                         </div>
-                                        <h3 style={{ fontSize: '16px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', lineHeight: 1.3, marginBottom: '4px' }}>
+                                        <h3 style={{ fontSize: '16px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', lineHeight: 1.3, marginBottom: '4px' }}>
                                             {challenge.title}
                                         </h3>
-                                        <div style={{ fontSize: '13px', color: '#64748b', fontWeight: 500 }}>{challenge.company}</div>
+                                        <div style={{ fontSize: '13px', color: '#9ca3af', fontWeight: 500 }}>{challenge.company}</div>
                                     </div>
                                     <MatchRing score={challenge.matchScore} size={58} fontSize={14} />
                                 </div>
 
                                 <div style={{ display: 'flex', gap: '16px', marginBottom: '14px', flexWrap: 'wrap' }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '12px', color: '#64748b' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '12px', color: '#9ca3af' }}>
                                         <Users size={12} /> {challenge.participants} participants
                                     </div>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '12px', color: '#ef4444', fontWeight: 500 }}>

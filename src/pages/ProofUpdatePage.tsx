@@ -30,27 +30,27 @@ export default function ProofUpdatePage({ onNavigate, showToast, onScoreUpdate }
                     🎉
                 </div>
 
-                <h1 style={{ fontSize: '30px', fontWeight: 900, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '8px' }}>
+                <h1 style={{ fontSize: '30px', fontWeight: 900, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '8px' }}>
                     You just added new proof to your profile.
                 </h1>
-                <p style={{ fontSize: '15px', color: '#64748b', marginBottom: '36px', lineHeight: 1.6 }}>
+                <p style={{ fontSize: '15px', color: '#9ca3af', marginBottom: '36px', lineHeight: 1.6 }}>
                     Your completed project has been verified and added to your Proof-of-Work profile.
                 </p>
 
                 {/* Project summary */}
                 <div style={{
-                    background: 'white', borderRadius: '16px',
-                    border: '1px solid #e2e8f0', padding: '28px',
+                    background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                    border: '1px solid rgba(255,255,255,0.05)', padding: '28px',
                     marginBottom: '24px', textAlign: 'left',
                     boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
                 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
                         <div>
                             <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', color: '#94a3b8', marginBottom: '6px' }}>PROJECT COMPLETED</div>
-                            <h2 style={{ fontSize: '18px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans' }}>
+                            <h2 style={{ fontSize: '18px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans' }}>
                                 AI Customer Research Platform
                             </h2>
-                            <div style={{ fontSize: '13px', color: '#64748b', marginTop: '4px' }}>Nova Labs · 2 weeks</div>
+                            <div style={{ fontSize: '13px', color: '#9ca3af', marginTop: '4px' }}>Nova Labs · 2 weeks</div>
                         </div>
                         <div style={{
                             width: '48px', height: '48px', borderRadius: '12px',
@@ -61,14 +61,14 @@ export default function ProofUpdatePage({ onNavigate, showToast, onScoreUpdate }
                     </div>
 
                     <div style={{ marginBottom: '20px' }}>
-                        <div style={{ fontSize: '13px', fontWeight: 700, color: '#64748b', marginBottom: '10px', letterSpacing: '0.04em' }}>
+                        <div style={{ fontSize: '13px', fontWeight: 700, color: '#9ca3af', marginBottom: '10px', letterSpacing: '0.04em' }}>
                             SKILLS DEMONSTRATED
                         </div>
                         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                             {['User Research', 'Python', 'Data Analysis', 'Product Strategy'].map(s => (
                                 <span key={s} style={{
                                     padding: '4px 12px', borderRadius: '999px', fontSize: '12px', fontWeight: 600,
-                                    background: '#eff6ff', color: '#2563eb', border: '1px solid #bfdbfe',
+                                    background: 'rgba(109, 40, 217, 0.1)', color: '#a78bfa', border: '1px solid #bfdbfe',
                                 }}>{s}</span>
                             ))}
                         </div>
@@ -93,7 +93,7 @@ export default function ProofUpdatePage({ onNavigate, showToast, onScoreUpdate }
                     }}>
                         <div style={{ textAlign: 'center' }}>
                             <div style={{ fontSize: '11px', fontWeight: 700, color: '#94a3b8', marginBottom: '4px' }}>BEFORE</div>
-                            <div style={{ fontSize: '36px', fontWeight: 900, color: '#64748b', fontFamily: 'Plus Jakarta Sans', lineHeight: 1 }}>82</div>
+                            <div style={{ fontSize: '36px', fontWeight: 900, color: '#9ca3af', fontFamily: 'Plus Jakarta Sans', lineHeight: 1 }}>82</div>
                             <div style={{ fontSize: '10px', color: '#94a3b8' }}>Proof Score</div>
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
@@ -114,7 +114,7 @@ export default function ProofUpdatePage({ onNavigate, showToast, onScoreUpdate }
                     borderRadius: '16px', border: '1px solid #e0e7ff',
                     padding: '24px', marginBottom: '24px', textAlign: 'left',
                 }}>
-                    <h3 style={{ fontSize: '14px', fontWeight: 700, color: '#0f172a', marginBottom: '14px' }}>What happens now?</h3>
+                    <h3 style={{ fontSize: '14px', fontWeight: 700, color: 'white', marginBottom: '14px' }}>What happens now?</h3>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                         {[
                             'Your proof score has been updated from 82 to 88',

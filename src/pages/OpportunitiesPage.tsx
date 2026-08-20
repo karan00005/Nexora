@@ -39,10 +39,10 @@ export default function OpportunitiesPage({ onNavigate, showToast }: Opportuniti
         <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '32px 24px', fontFamily: 'Inter, sans-serif' }}>
             {/* Header */}
             <div style={{ marginBottom: '28px' }}>
-                <h1 style={{ fontSize: '26px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '6px' }}>
+                <h1 style={{ fontSize: '26px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '6px' }}>
                     Opportunities
                 </h1>
-                <p style={{ color: '#64748b', fontSize: '14px' }}>
+                <p style={{ color: '#9ca3af', fontSize: '14px' }}>
                     AI-matched opportunities based on your skills, projects, and goals
                 </p>
             </div>
@@ -52,7 +52,7 @@ export default function OpportunitiesPage({ onNavigate, showToast }: Opportuniti
                 <div style={{
                     flex: 1, minWidth: '260px',
                     display: 'flex', alignItems: 'center', gap: '10px',
-                    background: 'white', border: '1.5px solid #e2e8f0', borderRadius: '10px',
+                    background: 'rgba(20,20,25,0.8)', border: '1.5px solid #e2e8f0', borderRadius: '10px',
                     padding: '10px 16px',
                 }}>
                     <Search size={16} color="#94a3b8" />
@@ -60,7 +60,7 @@ export default function OpportunitiesPage({ onNavigate, showToast }: Opportuniti
                         value={searchQuery}
                         onChange={e => setSearchQuery(e.target.value)}
                         placeholder="Search opportunities, skills, companies..."
-                        style={{ border: 'none', background: 'transparent', fontSize: '14px', color: '#0f172a', outline: 'none', flex: 1, fontFamily: 'Inter' }}
+                        style={{ border: 'none', background: 'transparent', fontSize: '14px', color: 'white', outline: 'none', flex: 1, fontFamily: 'Inter' }}
                     />
                 </div>
                 <select
@@ -68,7 +68,7 @@ export default function OpportunitiesPage({ onNavigate, showToast }: Opportuniti
                     onChange={e => setMinMatch(Number(e.target.value))}
                     style={{
                         padding: '10px 14px', borderRadius: '10px', border: '1.5px solid #e2e8f0',
-                        background: 'white', fontSize: '13px', fontFamily: 'Inter', color: '#374151',
+                        background: 'rgba(20,20,25,0.8)', fontSize: '13px', fontFamily: 'Inter', color: '#374151',
                         cursor: 'pointer', outline: 'none',
                     }}
                 >
@@ -85,8 +85,8 @@ export default function OpportunitiesPage({ onNavigate, showToast }: Opportuniti
             {/* Tabs */}
             <div style={{
                 display: 'flex', gap: '4px', marginBottom: '24px',
-                background: '#f8fafc', borderRadius: '10px', padding: '4px',
-                border: '1px solid #e2e8f0', overflowX: 'auto',
+                background: '#050505', borderRadius: '10px', padding: '4px',
+                border: '1px solid rgba(255,255,255,0.05)', overflowX: 'auto',
             }}>
                 {tabs.map(tab => (
                     <button
@@ -109,7 +109,7 @@ export default function OpportunitiesPage({ onNavigate, showToast }: Opportuniti
 
             {/* Results count */}
             <div style={{ marginBottom: '16px' }}>
-                <span style={{ fontSize: '13px', color: '#64748b', fontWeight: 500 }}>
+                <span style={{ fontSize: '13px', color: '#9ca3af', fontWeight: 500 }}>
                     {filtered.length} opportunities found
                 </span>
             </div>
@@ -122,8 +122,8 @@ export default function OpportunitiesPage({ onNavigate, showToast }: Opportuniti
                         <div
                             key={opp.id}
                             style={{
-                                background: 'white', borderRadius: '16px',
-                                border: '1px solid #e2e8f0',
+                                background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                                border: '1px solid rgba(255,255,255,0.05)',
                                 boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
                                 transition: 'all 0.2s ease', overflow: 'hidden',
                             }}
@@ -153,7 +153,7 @@ export default function OpportunitiesPage({ onNavigate, showToast }: Opportuniti
                                 {/* Main info */}
                                 <div style={{ flex: 1, minWidth: 0 }}>
                                     <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', flexWrap: 'wrap', marginBottom: '6px' }}>
-                                        <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', margin: 0 }}>
+                                        <h3 style={{ fontSize: '17px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', margin: 0 }}>
                                             {opp.title}
                                         </h3>
                                         <span style={{
@@ -164,15 +164,15 @@ export default function OpportunitiesPage({ onNavigate, showToast }: Opportuniti
                                         </span>
                                     </div>
 
-                                    <div style={{ fontSize: '14px', color: '#64748b', fontWeight: 500, marginBottom: '10px' }}>
+                                    <div style={{ fontSize: '14px', color: '#9ca3af', fontWeight: 500, marginBottom: '10px' }}>
                                         {opp.company}
                                     </div>
 
                                     <div style={{ display: 'flex', gap: '16px', marginBottom: '12px', flexWrap: 'wrap' }}>
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '13px', color: '#64748b' }}>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '13px', color: '#9ca3af' }}>
                                             <MapPin size={12} /> {opp.location}
                                         </div>
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '13px', color: '#64748b' }}>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '13px', color: '#9ca3af' }}>
                                             <Clock size={12} /> {opp.duration}
                                         </div>
                                         {(opp.stipend || opp.reward) && (
@@ -227,7 +227,7 @@ export default function OpportunitiesPage({ onNavigate, showToast }: Opportuniti
                 {filtered.length === 0 && (
                     <div style={{ textAlign: 'center', padding: '60px 20px', color: '#94a3b8' }}>
                         <div style={{ fontSize: '48px', marginBottom: '16px' }}>🔍</div>
-                        <div style={{ fontSize: '16px', fontWeight: 600, color: '#64748b', marginBottom: '8px' }}>No opportunities found</div>
+                        <div style={{ fontSize: '16px', fontWeight: 600, color: '#9ca3af', marginBottom: '8px' }}>No opportunities found</div>
                         <div style={{ fontSize: '14px' }}>Try adjusting your filters or search terms</div>
                     </div>
                 )}

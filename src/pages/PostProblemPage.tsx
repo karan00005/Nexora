@@ -40,10 +40,10 @@ export default function PostProblemPage({ onNavigate, showToast }: PostProblemPa
                 }}>
                     🤖
                 </div>
-                <h2 style={{ fontSize: '22px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '10px' }}>
+                <h2 style={{ fontSize: '22px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '10px' }}>
                     AI is finding your best matches...
                 </h2>
-                <p style={{ fontSize: '15px', color: '#64748b', marginBottom: '32px' }}>
+                <p style={{ fontSize: '15px', color: '#9ca3af', marginBottom: '32px' }}>
                     Analyzing proof-of-work profiles across the ZUNIVA network
                 </p>
                 <div style={{ display: 'flex', gap: '8px' }}>
@@ -59,7 +59,7 @@ export default function PostProblemPage({ onNavigate, showToast }: PostProblemPa
                     {['Scanning skill requirements...', 'Analyzing proof-of-work data...', 'Computing match scores...'].map((text, i) => (
                         <div key={i} style={{
                             display: 'flex', alignItems: 'center', gap: '10px',
-                            fontSize: '13px', color: '#64748b',
+                            fontSize: '13px', color: '#9ca3af',
                             animation: `fadeIn 0.3s ease ${i * 0.4}s both`,
                         }}>
                             <CheckCircle size={14} color="#10b981" />
@@ -83,10 +83,10 @@ export default function PostProblemPage({ onNavigate, showToast }: PostProblemPa
                         <CheckCircle size={16} color="#10b981" />
                         <span style={{ fontSize: '14px', fontWeight: 700, color: '#059669' }}>AI matching complete!</span>
                     </div>
-                    <h1 style={{ fontSize: '28px', fontWeight: 900, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '8px' }}>
+                    <h1 style={{ fontSize: '28px', fontWeight: 900, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '8px' }}>
                         24 recommended builders found
                     </h1>
-                    <p style={{ fontSize: '15px', color: '#64748b' }}>
+                    <p style={{ fontSize: '15px', color: '#9ca3af' }}>
                         Best builders for: <strong>AI-powered Customer Research Platform</strong>
                     </p>
                 </div>
@@ -94,7 +94,7 @@ export default function PostProblemPage({ onNavigate, showToast }: PostProblemPa
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                     {mockCompanyTalent.map((talent, i) => (
                         <div key={talent.id} style={{
-                            background: 'white', borderRadius: '16px',
+                            background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
                             border: i === 0 ? '2px solid #10b981' : '1px solid #e2e8f0',
                             padding: '24px', display: 'flex', gap: '16px', alignItems: 'center',
                             boxShadow: i === 0 ? '0 4px 20px rgba(16,185,129,0.1)' : '0 1px 4px rgba(0,0,0,0.04)',
@@ -118,19 +118,19 @@ export default function PostProblemPage({ onNavigate, showToast }: PostProblemPa
                             </div>
                             <Avatar initials={talent.avatar} size={52} />
                             <div style={{ flex: 1, minWidth: 0 }}>
-                                <div style={{ fontSize: '16px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '4px' }}>
+                                <div style={{ fontSize: '16px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '4px' }}>
                                     {talent.name}
                                     {!talent.available && <span style={{ fontSize: '11px', color: '#ef4444', fontWeight: 600, marginLeft: '8px' }}>● Busy</span>}
                                     {talent.available && <span style={{ fontSize: '11px', color: '#10b981', fontWeight: 600, marginLeft: '8px' }}>● Available</span>}
                                 </div>
-                                <div style={{ fontSize: '13px', color: '#64748b', marginBottom: '10px' }}>
-                                    {talent.university} · Proof Score: <strong style={{ color: '#0f172a' }}>{talent.proofScore}</strong>
+                                <div style={{ fontSize: '13px', color: '#9ca3af', marginBottom: '10px' }}>
+                                    {talent.university} · Proof Score: <strong style={{ color: 'white' }}>{talent.proofScore}</strong>
                                 </div>
                                 <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '10px' }}>
                                     {talent.skills.map(s => <SkillBadge key={s} skill={s} />)}
                                 </div>
-                                <div style={{ fontSize: '12px', color: '#64748b' }}>
-                                    Relevant Project: <span style={{ fontWeight: 600, color: '#0f172a' }}>"{talent.project}"</span>
+                                <div style={{ fontSize: '12px', color: '#9ca3af' }}>
+                                    Relevant Project: <span style={{ fontWeight: 600, color: 'white' }}>"{talent.project}"</span>
                                 </div>
                             </div>
                             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', flexShrink: 0 }}>
@@ -177,17 +177,17 @@ export default function PostProblemPage({ onNavigate, showToast }: PostProblemPa
     return (
         <div style={{ maxWidth: '700px', margin: '0 auto', padding: '32px 24px', fontFamily: 'Inter, sans-serif' }}>
             <div style={{ marginBottom: '28px' }}>
-                <h1 style={{ fontSize: '26px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '6px' }}>
+                <h1 style={{ fontSize: '26px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '6px' }}>
                     Post a Real-World Problem
                 </h1>
-                <p style={{ fontSize: '14px', color: '#64748b' }}>
+                <p style={{ fontSize: '14px', color: '#9ca3af' }}>
                     Describe your challenge and AI will match you with the best builders in the network.
                 </p>
             </div>
 
             <div style={{
-                background: 'white', borderRadius: '16px',
-                border: '1px solid #e2e8f0', padding: '32px',
+                background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                border: '1px solid rgba(255,255,255,0.05)', padding: '32px',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
             }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -257,19 +257,19 @@ export default function PostProblemPage({ onNavigate, showToast }: PostProblemPa
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px' }}>
                         <div>
                             <label style={{ fontSize: '13px', fontWeight: 700, color: '#374151', display: 'block', marginBottom: '8px' }}>Domain</label>
-                            <select style={{ width: '100%', padding: '11px 14px', borderRadius: '10px', border: '1.5px solid #e2e8f0', fontSize: '13px', fontFamily: 'Inter', outline: 'none', background: 'white' }}>
+                            <select style={{ width: '100%', padding: '11px 14px', borderRadius: '10px', border: '1.5px solid #e2e8f0', fontSize: '13px', fontFamily: 'Inter', outline: 'none', background: 'rgba(20,20,25,0.8)' }}>
                                 {domainOptions.map(d => <option key={d}>{d}</option>)}
                             </select>
                         </div>
                         <div>
                             <label style={{ fontSize: '13px', fontWeight: 700, color: '#374151', display: 'block', marginBottom: '8px' }}>Duration</label>
-                            <select defaultValue="2 weeks" style={{ width: '100%', padding: '11px 14px', borderRadius: '10px', border: '1.5px solid #e2e8f0', fontSize: '13px', fontFamily: 'Inter', outline: 'none', background: 'white' }}>
+                            <select defaultValue="2 weeks" style={{ width: '100%', padding: '11px 14px', borderRadius: '10px', border: '1.5px solid #e2e8f0', fontSize: '13px', fontFamily: 'Inter', outline: 'none', background: 'rgba(20,20,25,0.8)' }}>
                                 {['1 week', '2 weeks', '4 weeks', '6 weeks', '3 months'].map(d => <option key={d}>{d}</option>)}
                             </select>
                         </div>
                         <div>
                             <label style={{ fontSize: '13px', fontWeight: 700, color: '#374151', display: 'block', marginBottom: '8px' }}>Team Size</label>
-                            <select defaultValue="4" style={{ width: '100%', padding: '11px 14px', borderRadius: '10px', border: '1.5px solid #e2e8f0', fontSize: '13px', fontFamily: 'Inter', outline: 'none', background: 'white' }}>
+                            <select defaultValue="4" style={{ width: '100%', padding: '11px 14px', borderRadius: '10px', border: '1.5px solid #e2e8f0', fontSize: '13px', fontFamily: 'Inter', outline: 'none', background: 'rgba(20,20,25,0.8)' }}>
                                 {['1', '2', '3', '4', '5', '6+'].map(d => <option key={d}>{d}</option>)}
                             </select>
                         </div>
@@ -302,7 +302,7 @@ export default function PostProblemPage({ onNavigate, showToast }: PostProblemPa
                                     <div style={{
                                         position: 'absolute', top: '3px', left: toggle.defaultOn ? '21px' : '3px',
                                         width: '16px', height: '16px', borderRadius: '50%',
-                                        background: 'white', transition: 'all 0.2s ease',
+                                        background: 'rgba(20,20,25,0.8)', transition: 'all 0.2s ease',
                                         boxShadow: '0 1px 4px rgba(0,0,0,0.2)',
                                     }} />
                                 </div>

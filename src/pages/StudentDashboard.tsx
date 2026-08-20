@@ -15,10 +15,10 @@ export default function StudentDashboard({ onNavigate, showToast }: DashboardPro
             {/* Welcome */}
             <div style={{ marginBottom: '32px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <div>
-                    <h1 style={{ fontSize: '28px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '6px' }}>
+                    <h1 style={{ fontSize: '28px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '6px' }}>
                         Good morning, Aarav 👋
                     </h1>
-                    <p style={{ color: '#64748b', fontSize: '15px' }}>Here's what's happening with your career journey.</p>
+                    <p style={{ color: '#9ca3af', fontSize: '15px' }}>Here's what's happening with your career journey.</p>
                 </div>
                 <div style={{ display: 'flex', gap: '10px' }}>
                     <button onClick={() => onNavigate('opportunities')} className="btn-primary" style={{ padding: '10px 18px', fontSize: '13px' }}>
@@ -40,13 +40,13 @@ export default function StudentDashboard({ onNavigate, showToast }: DashboardPro
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                     {/* Profile Strength */}
                     <div style={{
-                        background: 'white', borderRadius: '16px',
-                        border: '1px solid #e2e8f0', padding: '24px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
                         boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
                     }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-                            <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans' }}>Profile Strength</h3>
-                            <span style={{ fontSize: '13px', fontWeight: 700, color: '#2563eb' }}>78% Complete</span>
+                            <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans' }}>Profile Strength</h3>
+                            <span style={{ fontSize: '13px', fontWeight: 700, color: '#a78bfa' }}>78% Complete</span>
                         </div>
                         <div style={{ height: '8px', background: '#e2e8f0', borderRadius: '999px', overflow: 'hidden', marginBottom: '16px' }}>
                             <div style={{
@@ -78,19 +78,19 @@ export default function StudentDashboard({ onNavigate, showToast }: DashboardPro
 
                     {/* AI Opportunity Matches */}
                     <div style={{
-                        background: 'white', borderRadius: '16px',
-                        border: '1px solid #e2e8f0', padding: '24px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
                         boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
                     }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
                             <div>
-                                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans' }}>
+                                <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans' }}>
                                     🤖 AI Opportunity Matches
                                 </h3>
                                 <p style={{ fontSize: '12px', color: '#94a3b8', marginTop: '2px' }}>Based on your skills, projects & goals</p>
                             </div>
                             <button onClick={() => onNavigate('opportunities')} style={{
-                                fontSize: '12px', fontWeight: 600, color: '#2563eb',
+                                fontSize: '12px', fontWeight: 600, color: '#a78bfa',
                                 background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px',
                             }}>
                                 View All <ArrowRight size={13} />
@@ -105,7 +105,7 @@ export default function StudentDashboard({ onNavigate, showToast }: DashboardPro
                                     style={{
                                         display: 'flex', alignItems: 'center', gap: '16px',
                                         padding: '16px', borderRadius: '12px',
-                                        border: '1px solid #e2e8f0', cursor: 'pointer',
+                                        border: '1px solid rgba(255,255,255,0.05)', cursor: 'pointer',
                                         transition: 'all 0.2s ease',
                                         background: '#fafafa',
                                     }}
@@ -130,8 +130,8 @@ export default function StudentDashboard({ onNavigate, showToast }: DashboardPro
                                         {opp.companyLogo}
                                     </div>
                                     <div style={{ flex: 1, minWidth: 0 }}>
-                                        <div style={{ fontSize: '14px', fontWeight: 700, color: '#0f172a', marginBottom: '2px' }}>{opp.title}</div>
-                                        <div style={{ fontSize: '12px', color: '#64748b' }}>{opp.company} · {opp.location} · {opp.duration}</div>
+                                        <div style={{ fontSize: '14px', fontWeight: 700, color: 'white', marginBottom: '2px' }}>{opp.title}</div>
+                                        <div style={{ fontSize: '12px', color: '#9ca3af' }}>{opp.company} · {opp.location} · {opp.duration}</div>
                                         <div style={{ display: 'flex', gap: '6px', marginTop: '8px', flexWrap: 'wrap' }}>
                                             {opp.skills.map(s => <SkillBadge key={s} skill={s} />)}
                                         </div>
@@ -146,23 +146,23 @@ export default function StudentDashboard({ onNavigate, showToast }: DashboardPro
 
                     {/* Recommended Projects */}
                     <div style={{
-                        background: 'white', borderRadius: '16px',
-                        border: '1px solid #e2e8f0', padding: '24px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
                         boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
                     }}>
-                        <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '16px' }}>
+                        <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '16px' }}>
                             🔨 Recommended Projects
                         </h3>
                         <div style={{
                             background: 'linear-gradient(135deg, #f8fbff, #f5f3ff)',
-                            borderRadius: '12px', border: '1px solid #e2e8f0', padding: '20px',
+                            borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', padding: '20px',
                         }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
                                 <div>
-                                    <div style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>
+                                    <div style={{ fontSize: '15px', fontWeight: 700, color: 'white', marginBottom: '4px' }}>
                                         Build an AI-powered customer feedback analyzer
                                     </div>
-                                    <div style={{ fontSize: '12px', color: '#64748b' }}>Nova Labs</div>
+                                    <div style={{ fontSize: '12px', color: '#9ca3af' }}>Nova Labs</div>
                                 </div>
                                 <span style={{
                                     padding: '4px 10px', borderRadius: '999px',
@@ -170,8 +170,8 @@ export default function StudentDashboard({ onNavigate, showToast }: DashboardPro
                                 }}>94% Match</span>
                             </div>
                             <div style={{ display: 'flex', gap: '20px', marginBottom: '16px' }}>
-                                <div style={{ fontSize: '12px', color: '#64748b' }}>👥 Team: 3/4 members</div>
-                                <div style={{ fontSize: '12px', color: '#64748b' }}>⏱ 2 weeks</div>
+                                <div style={{ fontSize: '12px', color: '#9ca3af' }}>👥 Team: 3/4 members</div>
+                                <div style={{ fontSize: '12px', color: '#9ca3af' }}>⏱ 2 weeks</div>
                                 <div style={{ fontSize: '12px', color: '#f59e0b', fontWeight: 600 }}>₹15,000 + Certificate</div>
                             </div>
                             <button
@@ -228,11 +228,11 @@ export default function StudentDashboard({ onNavigate, showToast }: DashboardPro
 
                     {/* Recent Activity */}
                     <div style={{
-                        background: 'white', borderRadius: '16px',
-                        border: '1px solid #e2e8f0', padding: '24px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
                         boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
                     }}>
-                        <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '16px' }}>
+                        <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '16px' }}>
                             Recent Activity
                         </h3>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -250,7 +250,7 @@ export default function StudentDashboard({ onNavigate, showToast }: DashboardPro
                                             {icons[act.type]}
                                         </div>
                                         <div>
-                                            <div style={{ fontSize: '13px', fontWeight: 500, color: '#0f172a' }}>{act.text}</div>
+                                            <div style={{ fontSize: '13px', fontWeight: 500, color: 'white' }}>{act.text}</div>
                                             <div style={{ fontSize: '11px', color: '#94a3b8', marginTop: '2px' }}>{act.time}</div>
                                         </div>
                                     </div>
@@ -261,11 +261,11 @@ export default function StudentDashboard({ onNavigate, showToast }: DashboardPro
 
                     {/* Quick Actions */}
                     <div style={{
-                        background: 'white', borderRadius: '16px',
-                        border: '1px solid #e2e8f0', padding: '24px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
                         boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
                     }}>
-                        <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '14px' }}>
+                        <h3 style={{ fontSize: '15px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '14px' }}>
                             Quick Actions
                         </h3>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -280,8 +280,8 @@ export default function StudentDashboard({ onNavigate, showToast }: DashboardPro
                                     onClick={() => onNavigate(item.action)}
                                     style={{
                                         padding: '10px 14px', borderRadius: '10px',
-                                        border: '1px solid #e2e8f0', background: '#f8fafc',
-                                        color: '#0f172a', fontSize: '13px', fontWeight: 500,
+                                        border: '1px solid rgba(255,255,255,0.05)', background: '#050505',
+                                        color: 'white', fontSize: '13px', fontWeight: 500,
                                         cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px',
                                         textAlign: 'left', fontFamily: 'Inter', transition: 'all 0.15s ease',
                                     }}

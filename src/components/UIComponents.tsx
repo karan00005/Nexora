@@ -77,8 +77,8 @@ export function ProgressBar({ value, label, color = '#2563eb' }: ProgressBarProp
         <div>
             {label && (
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
-                    <span style={{ fontSize: '13px', color: '#64748b', fontWeight: 500 }}>{label}</span>
-                    <span style={{ fontSize: '13px', color: '#0f172a', fontWeight: 700 }}>{value}%</span>
+                    <span style={{ fontSize: '13px', color: '#9ca3af', fontWeight: 500 }}>{label}</span>
+                    <span style={{ fontSize: '13px', color: 'white', fontWeight: 700 }}>{value}%</span>
                 </div>
             )}
             <div style={{ height: '6px', borderRadius: '999px', background: '#e2e8f0', overflow: 'hidden' }}>
@@ -102,8 +102,8 @@ interface StatCardProps {
 export function StatCard({ value, label, icon, color = '#2563eb' }: StatCardProps) {
     return (
         <div style={{
-            background: 'white', borderRadius: '14px',
-            border: '1px solid #e2e8f0', padding: '20px',
+            background: 'rgba(20,20,25,0.8)', borderRadius: '14px',
+            border: '1px solid rgba(255,255,255,0.05)', padding: '20px',
             textAlign: 'center', flex: 1,
             boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
         }}>
@@ -154,10 +154,10 @@ export function ProofScoreRing({ score, size = 120 }: ProofScoreRingProps) {
                 display: 'flex', flexDirection: 'column',
                 alignItems: 'center', justifyContent: 'center',
             }}>
-                <span style={{ fontSize: '28px', fontWeight: 900, color: '#0f172a', lineHeight: 1, fontFamily: 'Plus Jakarta Sans' }}>
+                <span style={{ fontSize: '28px', fontWeight: 900, color: 'white', lineHeight: 1, fontFamily: 'Plus Jakarta Sans' }}>
                     {score}
                 </span>
-                <span style={{ fontSize: '10px', color: '#64748b', fontWeight: 600, letterSpacing: '0.08em' }}>PROOF SCORE</span>
+                <span style={{ fontSize: '10px', color: '#9ca3af', fontWeight: 600, letterSpacing: '0.08em' }}>PROOF SCORE</span>
             </div>
         </div>
     );

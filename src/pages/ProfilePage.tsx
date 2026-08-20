@@ -92,7 +92,7 @@ export default function ProfilePage({ showToast, updatedScore }: ProfilePageProp
                             borderRight: i < 4 ? '1px solid rgba(255,255,255,0.08)' : 'none',
                         }}>
                             <div style={{ fontSize: '26px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans' }}>{stat.value}</div>
-                            <div style={{ fontSize: '12px', color: '#64748b', marginTop: '4px', fontWeight: 500 }}>{stat.label}</div>
+                            <div style={{ fontSize: '12px', color: '#9ca3af', marginTop: '4px', fontWeight: 500 }}>{stat.label}</div>
                         </div>
                     ))}
                 </div>
@@ -103,10 +103,10 @@ export default function ProfilePage({ showToast, updatedScore }: ProfilePageProp
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                     {/* Featured Projects */}
                     <div style={{
-                        background: 'white', borderRadius: '16px',
-                        border: '1px solid #e2e8f0', padding: '24px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
                     }}>
-                        <h2 style={{ fontSize: '17px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '20px' }}>
+                        <h2 style={{ fontSize: '17px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '20px' }}>
                             Featured Projects
                         </h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -114,7 +114,7 @@ export default function ProfilePage({ showToast, updatedScore }: ProfilePageProp
                                 <div
                                     key={proj.id}
                                     style={{
-                                        border: '1px solid #e2e8f0', borderRadius: '14px',
+                                        border: '1px solid rgba(255,255,255,0.05)', borderRadius: '14px',
                                         padding: '20px', transition: 'all 0.2s ease',
                                         cursor: 'pointer',
                                     }}
@@ -130,7 +130,7 @@ export default function ProfilePage({ showToast, updatedScore }: ProfilePageProp
                                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px' }}>
                                         <div>
                                             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                                                <span style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a' }}>{proj.title}</span>
+                                                <span style={{ fontSize: '15px', fontWeight: 700, color: 'white' }}>{proj.title}</span>
                                                 {proj.verified && (
                                                     <span style={{
                                                         padding: '2px 8px', borderRadius: '999px',
@@ -138,10 +138,10 @@ export default function ProfilePage({ showToast, updatedScore }: ProfilePageProp
                                                     }}>✓ Verified</span>
                                                 )}
                                             </div>
-                                            <div style={{ fontSize: '12px', color: '#64748b' }}>Role: {proj.role}</div>
+                                            <div style={{ fontSize: '12px', color: '#9ca3af' }}>Role: {proj.role}</div>
                                         </div>
                                     </div>
-                                    <p style={{ fontSize: '13px', color: '#475569', lineHeight: 1.6, marginBottom: '12px' }}>{proj.description}</p>
+                                    <p style={{ fontSize: '13px', color: '#d1d5db', lineHeight: 1.6, marginBottom: '12px' }}>{proj.description}</p>
                                     <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '12px' }}>
                                         {proj.tags.map(t => <SkillBadge key={t} skill={t} />)}
                                     </div>
@@ -157,8 +157,8 @@ export default function ProfilePage({ showToast, updatedScore }: ProfilePageProp
                                             <button onClick={() => showToast('Opening GitHub...')} style={{
                                                 display: 'flex', alignItems: 'center', gap: '6px',
                                                 padding: '6px 12px', borderRadius: '8px',
-                                                border: '1px solid #e2e8f0', background: 'white',
-                                                fontSize: '12px', fontWeight: 600, color: '#64748b', cursor: 'pointer', fontFamily: 'Inter',
+                                                border: '1px solid rgba(255,255,255,0.05)', background: 'rgba(20,20,25,0.8)',
+                                                fontSize: '12px', fontWeight: 600, color: '#9ca3af', cursor: 'pointer', fontFamily: 'Inter',
                                             }}>
                                                 <Globe size={13} /> GitHub
                                             </button>
@@ -167,8 +167,8 @@ export default function ProfilePage({ showToast, updatedScore }: ProfilePageProp
                                             <button onClick={() => showToast('Opening Demo...')} style={{
                                                 display: 'flex', alignItems: 'center', gap: '6px',
                                                 padding: '6px 12px', borderRadius: '8px',
-                                                border: '1px solid #bfdbfe', background: '#eff6ff',
-                                                fontSize: '12px', fontWeight: 600, color: '#2563eb', cursor: 'pointer', fontFamily: 'Inter',
+                                                border: '1px solid #bfdbfe', background: 'rgba(109, 40, 217, 0.1)',
+                                                fontSize: '12px', fontWeight: 600, color: '#a78bfa', cursor: 'pointer', fontFamily: 'Inter',
                                             }}>
                                                 <ExternalLink size={13} /> Demo
                                             </button>
@@ -181,10 +181,10 @@ export default function ProfilePage({ showToast, updatedScore }: ProfilePageProp
 
                     {/* Achievements */}
                     <div style={{
-                        background: 'white', borderRadius: '16px',
-                        border: '1px solid #e2e8f0', padding: '24px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
                     }}>
-                        <h2 style={{ fontSize: '17px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '20px' }}>
+                        <h2 style={{ fontSize: '17px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '20px' }}>
                             Achievements
                         </h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -194,8 +194,8 @@ export default function ProfilePage({ showToast, updatedScore }: ProfilePageProp
                                 return (
                                     <div key={i} style={{
                                         display: 'flex', gap: '14px', alignItems: 'center',
-                                        padding: '14px', borderRadius: '10px', background: '#f8fafc',
-                                        border: '1px solid #e2e8f0',
+                                        padding: '14px', borderRadius: '10px', background: '#050505',
+                                        border: '1px solid rgba(255,255,255,0.05)',
                                     }}>
                                         <div style={{
                                             width: '40px', height: '40px', borderRadius: '10px',
@@ -205,7 +205,7 @@ export default function ProfilePage({ showToast, updatedScore }: ProfilePageProp
                                             {typeIcons[ach.type]}
                                         </div>
                                         <div>
-                                            <div style={{ fontSize: '14px', fontWeight: 600, color: '#0f172a' }}>{ach.title}</div>
+                                            <div style={{ fontSize: '14px', fontWeight: 600, color: 'white' }}>{ach.title}</div>
                                             <div style={{ fontSize: '12px', color: '#94a3b8' }}>{ach.org} · {ach.year}</div>
                                         </div>
                                     </div>
@@ -219,10 +219,10 @@ export default function ProfilePage({ showToast, updatedScore }: ProfilePageProp
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                     {/* Skills */}
                     <div style={{
-                        background: 'white', borderRadius: '16px',
-                        border: '1px solid #e2e8f0', padding: '24px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
                     }}>
-                        <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '20px' }}>
+                        <h2 style={{ fontSize: '16px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '20px' }}>
                             Skills & Proficiency
                         </h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -231,7 +231,7 @@ export default function ProfilePage({ showToast, updatedScore }: ProfilePageProp
                                 return (
                                     <div key={skill.name}>
                                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
-                                            <span style={{ fontSize: '13px', fontWeight: 600, color: '#0f172a' }}>{skill.name}</span>
+                                            <span style={{ fontSize: '13px', fontWeight: 600, color: 'white' }}>{skill.name}</span>
                                             <span style={{
                                                 fontSize: '10px', fontWeight: 700, padding: '2px 8px', borderRadius: '999px',
                                                 background: `${colors[skill.level]}20`, color: colors[skill.level],
@@ -253,22 +253,22 @@ export default function ProfilePage({ showToast, updatedScore }: ProfilePageProp
                     {/* Career Goal */}
                     <div style={{
                         background: 'linear-gradient(135deg, #f8fbff, #f5f3ff)',
-                        borderRadius: '16px', border: '1px solid #e2e8f0', padding: '24px',
+                        borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
                     }}>
-                        <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '12px' }}>
+                        <h2 style={{ fontSize: '16px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '12px' }}>
                             Career Goal
                         </h2>
-                        <p style={{ fontSize: '14px', color: '#475569', lineHeight: 1.7, fontStyle: 'italic' }}>
+                        <p style={{ fontSize: '14px', color: '#d1d5db', lineHeight: 1.7, fontStyle: 'italic' }}>
                             "{mockStudent.careerGoal}"
                         </p>
                     </div>
 
                     {/* Collaboration History */}
                     <div style={{
-                        background: 'white', borderRadius: '16px',
-                        border: '1px solid #e2e8f0', padding: '24px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
                     }}>
-                        <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '16px' }}>
+                        <h2 style={{ fontSize: '16px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '16px' }}>
                             Collaboration History
                         </h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -280,7 +280,7 @@ export default function ProfilePage({ showToast, updatedScore }: ProfilePageProp
                                 <div key={collab.name} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                                     <Avatar initials={collab.avatar} size={36} />
                                     <div>
-                                        <div style={{ fontSize: '13px', fontWeight: 600, color: '#0f172a' }}>{collab.name}</div>
+                                        <div style={{ fontSize: '13px', fontWeight: 600, color: 'white' }}>{collab.name}</div>
                                         <div style={{ fontSize: '11px', color: '#94a3b8' }}>{collab.project} · {collab.uni}</div>
                                     </div>
                                 </div>

@@ -72,8 +72,8 @@ export default function WorkspacePage({ showToast, onProjectComplete }: Workspac
             {/* Section tabs */}
             <div style={{
                 display: 'flex', gap: '4px', marginBottom: '24px',
-                background: '#f8fafc', borderRadius: '10px', padding: '4px',
-                border: '1px solid #e2e8f0',
+                background: '#050505', borderRadius: '10px', padding: '4px',
+                border: '1px solid rgba(255,255,255,0.05)',
             }}>
                 {sections.map(s => (
                     <button key={s} onClick={() => setActiveSection(s)} style={{
@@ -94,18 +94,18 @@ export default function WorkspacePage({ showToast, onProjectComplete }: Workspac
                     {/* Tasks */}
                     {activeSection === 'Tasks' && (
                         <div style={{
-                            background: 'white', borderRadius: '16px',
-                            border: '1px solid #e2e8f0', padding: '24px',
+                            background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                            border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
                         }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                                <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans' }}>
+                                <h2 style={{ fontSize: '16px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans' }}>
                                     Task List
                                 </h2>
                                 <button style={{
                                     display: 'flex', alignItems: 'center', gap: '6px',
                                     padding: '7px 14px', borderRadius: '8px',
-                                    border: '1px solid #e2e8f0', background: '#f8fafc',
-                                    fontSize: '12px', fontWeight: 600, color: '#64748b', cursor: 'pointer', fontFamily: 'Inter',
+                                    border: '1px solid rgba(255,255,255,0.05)', background: '#050505',
+                                    fontSize: '12px', fontWeight: 600, color: '#9ca3af', cursor: 'pointer', fontFamily: 'Inter',
                                 }}>
                                     <Plus size={13} /> Add Task
                                 </button>
@@ -173,19 +173,19 @@ export default function WorkspacePage({ showToast, onProjectComplete }: Workspac
 
                     {/* Overview */}
                     {activeSection === 'Overview' && (
-                        <div style={{ background: 'white', borderRadius: '16px', border: '1px solid #e2e8f0', padding: '24px' }}>
-                            <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '16px' }}>Project Overview</h2>
-                            <p style={{ fontSize: '14px', color: '#475569', lineHeight: 1.8, marginBottom: '20px' }}>
+                        <div style={{ background: 'rgba(20,20,25,0.8)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', padding: '24px' }}>
+                            <h2 style={{ fontSize: '16px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '16px' }}>Project Overview</h2>
+                            <p style={{ fontSize: '14px', color: '#d1d5db', lineHeight: 1.8, marginBottom: '20px' }}>
                                 Building an AI-powered customer research platform to analyze why users abandon the onboarding flow.
                                 The team will design research methodology, collect data via surveys and interviews, build an analysis pipeline, and deliver an insights dashboard.
                             </p>
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '14px' }}>
                                 {[
-                                    { label: 'Status', value: 'In Progress', color: '#2563eb' },
+                                    { label: 'Status', value: 'In Progress', color: '#a78bfa' },
                                     { label: 'Phase', value: 'Data Collection', color: '#7c3aed' },
                                     { label: 'Deadline', value: '5 days left', color: '#ef4444' },
                                 ].map(item => (
-                                    <div key={item.label} style={{ padding: '16px', borderRadius: '10px', background: '#f8fafc', border: '1px solid #e2e8f0', textAlign: 'center' }}>
+                                    <div key={item.label} style={{ padding: '16px', borderRadius: '10px', background: '#050505', border: '1px solid rgba(255,255,255,0.05)', textAlign: 'center' }}>
                                         <div style={{ fontSize: '13px', fontWeight: 700, color: item.color }}>{item.value}</div>
                                         <div style={{ fontSize: '11px', color: '#94a3b8', marginTop: '4px' }}>{item.label}</div>
                                     </div>
@@ -196,8 +196,8 @@ export default function WorkspacePage({ showToast, onProjectComplete }: Workspac
 
                     {/* Milestones */}
                     {activeSection === 'Milestones' && (
-                        <div style={{ background: 'white', borderRadius: '16px', border: '1px solid #e2e8f0', padding: '24px' }}>
-                            <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '16px' }}>Milestones</h2>
+                        <div style={{ background: 'rgba(20,20,25,0.8)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', padding: '24px' }}>
+                            <h2 style={{ fontSize: '16px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '16px' }}>Milestones</h2>
                             {[
                                 { title: 'Research Framework Design', date: 'Day 1-2', done: true },
                                 { title: 'User Interviews Complete', date: 'Day 3-5', done: true },
@@ -226,7 +226,7 @@ export default function WorkspacePage({ showToast, onProjectComplete }: Workspac
 
                     {/* Other sections */}
                     {!['Tasks', 'Overview', 'Milestones'].includes(activeSection) && (
-                        <div style={{ background: 'white', borderRadius: '16px', border: '1px solid #e2e8f0', padding: '40px', textAlign: 'center', color: '#94a3b8' }}>
+                        <div style={{ background: 'rgba(20,20,25,0.8)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', padding: '40px', textAlign: 'center', color: '#94a3b8' }}>
                             <div style={{ fontSize: '36px', marginBottom: '12px' }}>📁</div>
                             <div style={{ fontSize: '15px', fontWeight: 600 }}>{activeSection} section</div>
                             <div style={{ fontSize: '13px', marginTop: '8px' }}>Content will appear here</div>
@@ -237,8 +237,8 @@ export default function WorkspacePage({ showToast, onProjectComplete }: Workspac
                 {/* Right sidebar */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                     {/* Team */}
-                    <div style={{ background: 'white', borderRadius: '16px', border: '1px solid #e2e8f0', padding: '20px' }}>
-                        <h3 style={{ fontSize: '14px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '14px' }}>Team</h3>
+                    <div style={{ background: 'rgba(20,20,25,0.8)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', padding: '20px' }}>
+                        <h3 style={{ fontSize: '14px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '14px' }}>Team</h3>
                         {[
                             { name: 'Aarav Sharma', role: 'Backend Developer', avatar: 'AS', you: true },
                             { name: 'Priya Nair', role: 'Product Researcher', avatar: 'PN', you: false },
@@ -248,8 +248,8 @@ export default function WorkspacePage({ showToast, onProjectComplete }: Workspac
                             <div key={member.name} style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
                                 <Avatar initials={member.avatar} size={36} />
                                 <div style={{ flex: 1 }}>
-                                    <div style={{ fontSize: '13px', fontWeight: 600, color: '#0f172a' }}>
-                                        {member.name} {member.you && <span style={{ fontSize: '10px', color: '#2563eb', fontWeight: 700 }}>(You)</span>}
+                                    <div style={{ fontSize: '13px', fontWeight: 600, color: 'white' }}>
+                                        {member.name} {member.you && <span style={{ fontSize: '10px', color: '#a78bfa', fontWeight: 700 }}>(You)</span>}
                                     </div>
                                     <div style={{ fontSize: '11px', color: '#94a3b8' }}>
                                         {member.role}
@@ -262,8 +262,8 @@ export default function WorkspacePage({ showToast, onProjectComplete }: Workspac
                     </div>
 
                     {/* Progress breakdown */}
-                    <div style={{ background: 'white', borderRadius: '16px', border: '1px solid #e2e8f0', padding: '20px' }}>
-                        <h3 style={{ fontSize: '14px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '14px' }}>Progress</h3>
+                    <div style={{ background: 'rgba(20,20,25,0.8)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', padding: '20px' }}>
+                        <h3 style={{ fontSize: '14px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '14px' }}>Progress</h3>
                         {[
                             { label: 'Research', value: 100 },
                             { label: 'Data Collection', value: 85 },
@@ -272,7 +272,7 @@ export default function WorkspacePage({ showToast, onProjectComplete }: Workspac
                         ].map(item => (
                             <div key={item.label} style={{ marginBottom: '12px' }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '5px' }}>
-                                    <span style={{ fontSize: '12px', color: '#64748b', fontWeight: 500 }}>{item.label}</span>
+                                    <span style={{ fontSize: '12px', color: '#9ca3af', fontWeight: 500 }}>{item.label}</span>
                                     <span style={{ fontSize: '12px', fontWeight: 700, color: item.value === 100 ? '#10b981' : '#2563eb' }}>{item.value}%</span>
                                 </div>
                                 <div style={{ height: '5px', background: '#e2e8f0', borderRadius: '999px', overflow: 'hidden' }}>

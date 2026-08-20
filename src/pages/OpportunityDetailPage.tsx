@@ -23,7 +23,7 @@ export default function OpportunityDetailPage({ onNavigate, showToast }: Opportu
                     Opportunities
                 </button>
                 <span>/</span>
-                <span style={{ color: '#0f172a', fontWeight: 500 }}>AI-Powered Customer Research Platform</span>
+                <span style={{ color: 'white', fontWeight: 500 }}>AI-Powered Customer Research Platform</span>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '24px' }}>
@@ -31,8 +31,8 @@ export default function OpportunityDetailPage({ onNavigate, showToast }: Opportu
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                     {/* Header */}
                     <div style={{
-                        background: 'white', borderRadius: '16px',
-                        border: '1px solid #e2e8f0', padding: '28px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.05)', padding: '28px',
                     }}>
                         <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', marginBottom: '20px' }}>
                             <div style={{
@@ -42,11 +42,11 @@ export default function OpportunityDetailPage({ onNavigate, showToast }: Opportu
                                 color: 'white', fontWeight: 800, fontSize: '16px', flexShrink: 0, fontFamily: 'Plus Jakarta Sans',
                             }}>NL</div>
                             <div>
-                                <h1 style={{ fontSize: '22px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '6px' }}>
+                                <h1 style={{ fontSize: '22px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '6px' }}>
                                     AI-Powered Customer Research Platform
                                 </h1>
                                 <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                                    <div style={{ fontSize: '14px', fontWeight: 600, color: '#64748b' }}>Nova Labs</div>
+                                    <div style={{ fontSize: '14px', fontWeight: 600, color: '#9ca3af' }}>Nova Labs</div>
                                     <span style={{
                                         padding: '3px 10px', borderRadius: '999px', fontSize: '11px', fontWeight: 700,
                                         background: '#f5f3ff', color: '#7c3aed',
@@ -64,11 +64,11 @@ export default function OpportunityDetailPage({ onNavigate, showToast }: Opportu
                             ].map(item => (
                                 <div key={item.label} style={{
                                     padding: '14px', borderRadius: '10px',
-                                    background: '#f8fafc', border: '1px solid #e2e8f0', textAlign: 'center',
+                                    background: '#050505', border: '1px solid rgba(255,255,255,0.05)', textAlign: 'center',
                                 }}>
                                     <div style={{ fontSize: '18px', marginBottom: '4px' }}>{item.icon}</div>
                                     <div style={{ fontSize: '11px', color: '#94a3b8', fontWeight: 500 }}>{item.label}</div>
-                                    <div style={{ fontSize: '13px', fontWeight: 700, color: '#0f172a', marginTop: '2px' }}>{item.value}</div>
+                                    <div style={{ fontSize: '13px', fontWeight: 700, color: 'white', marginTop: '2px' }}>{item.value}</div>
                                 </div>
                             ))}
                         </div>
@@ -83,13 +83,13 @@ export default function OpportunityDetailPage({ onNavigate, showToast }: Opportu
 
                     {/* Problem Statement */}
                     <div style={{
-                        background: 'white', borderRadius: '16px',
-                        border: '1px solid #e2e8f0', padding: '24px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
                     }}>
-                        <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '14px' }}>
+                        <h2 style={{ fontSize: '16px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '14px' }}>
                             The Problem
                         </h2>
-                        <p style={{ fontSize: '14px', color: '#475569', lineHeight: 1.8 }}>
+                        <p style={{ fontSize: '14px', color: '#d1d5db', lineHeight: 1.8 }}>
                             We are trying to understand why users abandon our onboarding flow and need a data-driven research solution.
                             The current onboarding flow has a 62% drop-off rate but we don't understand the friction points.
                             We need a team to design a research framework, collect data, analyze it, and present actionable insights.
@@ -98,10 +98,10 @@ export default function OpportunityDetailPage({ onNavigate, showToast }: Opportu
 
                     {/* What You'll Build */}
                     <div style={{
-                        background: 'white', borderRadius: '16px',
-                        border: '1px solid #e2e8f0', padding: '24px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
                     }}>
-                        <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '16px' }}>
+                        <h2 style={{ fontSize: '16px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '16px' }}>
                             What You'll Build
                         </h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -113,16 +113,16 @@ export default function OpportunityDetailPage({ onNavigate, showToast }: Opportu
                             ].map(item => (
                                 <div key={item.title} style={{
                                     display: 'flex', gap: '14px', alignItems: 'flex-start',
-                                    padding: '14px', borderRadius: '10px', background: '#f8fafc', border: '1px solid #e2e8f0',
+                                    padding: '14px', borderRadius: '10px', background: '#050505', border: '1px solid rgba(255,255,255,0.05)',
                                 }}>
                                     <div style={{
                                         width: '36px', height: '36px', borderRadius: '8px',
-                                        background: '#eff6ff', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        background: 'rgba(109, 40, 217, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center',
                                         fontSize: '16px', flexShrink: 0,
                                     }}>{item.icon}</div>
                                     <div>
-                                        <div style={{ fontSize: '14px', fontWeight: 600, color: '#0f172a' }}>{item.title}</div>
-                                        <div style={{ fontSize: '12px', color: '#64748b', marginTop: '2px' }}>{item.desc}</div>
+                                        <div style={{ fontSize: '14px', fontWeight: 600, color: 'white' }}>{item.title}</div>
+                                        <div style={{ fontSize: '12px', color: '#9ca3af', marginTop: '2px' }}>{item.desc}</div>
                                     </div>
                                 </div>
                             ))}
@@ -131,10 +131,10 @@ export default function OpportunityDetailPage({ onNavigate, showToast }: Opportu
 
                     {/* Skills */}
                     <div style={{
-                        background: 'white', borderRadius: '16px',
-                        border: '1px solid #e2e8f0', padding: '24px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
                     }}>
-                        <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '14px' }}>
+                        <h2 style={{ fontSize: '16px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '14px' }}>
                             Required Skills
                         </h2>
                         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
@@ -185,8 +185,8 @@ export default function OpportunityDetailPage({ onNavigate, showToast }: Opportu
 
                     {/* CTA */}
                     <div style={{
-                        background: 'white', borderRadius: '16px',
-                        border: '1px solid #e2e8f0', padding: '24px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
                     }}>
                         <button
                             onClick={() => { showToast('Joined project! Check team page.'); onNavigate('team-formation'); }}
@@ -206,10 +206,10 @@ export default function OpportunityDetailPage({ onNavigate, showToast }: Opportu
 
                     {/* Team Needed */}
                     <div style={{
-                        background: 'white', borderRadius: '16px',
-                        border: '1px solid #e2e8f0', padding: '24px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
                     }}>
-                        <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '16px' }}>
+                        <h3 style={{ fontSize: '15px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '16px' }}>
                             Team Needed
                         </h3>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -244,13 +244,13 @@ export default function OpportunityDetailPage({ onNavigate, showToast }: Opportu
 
                     {/* Company */}
                     <div style={{
-                        background: 'white', borderRadius: '16px',
-                        border: '1px solid #e2e8f0', padding: '24px',
+                        background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
                     }}>
-                        <h3 style={{ fontSize: '14px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '14px' }}>
+                        <h3 style={{ fontSize: '14px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '14px' }}>
                             About Nova Labs
                         </h3>
-                        <p style={{ fontSize: '13px', color: '#64748b', lineHeight: 1.7, marginBottom: '14px' }}>
+                        <p style={{ fontSize: '13px', color: '#9ca3af', lineHeight: 1.7, marginBottom: '14px' }}>
                             Nova Labs is an AI-first product company building next-generation tools for teams.
                             Series A backed, 50-person team based in Bangalore.
                         </p>

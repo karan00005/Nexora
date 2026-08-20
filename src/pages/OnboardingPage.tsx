@@ -65,7 +65,7 @@ export default function OnboardingPage({ onComplete }: OnboardingProps) {
 
     return (
         <div style={{
-            minHeight: '100vh', background: 'white',
+            minHeight: '100vh', background: 'rgba(20,20,25,0.8)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             padding: '40px 24px', fontFamily: 'Inter, sans-serif',
         }}>
@@ -79,14 +79,14 @@ export default function OnboardingPage({ onComplete }: OnboardingProps) {
                     }}>
                         <span style={{ color: 'white', fontWeight: 800, fontSize: '16px', fontFamily: 'Plus Jakarta Sans' }}>Z</span>
                     </div>
-                    <span style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 800, fontSize: '18px', color: '#0f172a' }}>ZUNIVA</span>
+                    <span style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 800, fontSize: '18px', color: 'white' }}>ZUNIVA</span>
                 </div>
 
                 {/* Progress */}
                 <div style={{ marginBottom: '32px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                        <span style={{ fontSize: '13px', color: '#64748b', fontWeight: 500 }}>Step {step} of {totalSteps}</span>
-                        <span style={{ fontSize: '13px', color: '#2563eb', fontWeight: 600 }}>{Math.round((step / totalSteps) * 100)}% complete</span>
+                        <span style={{ fontSize: '13px', color: '#9ca3af', fontWeight: 500 }}>Step {step} of {totalSteps}</span>
+                        <span style={{ fontSize: '13px', color: '#a78bfa', fontWeight: 600 }}>{Math.round((step / totalSteps) * 100)}% complete</span>
                     </div>
                     <div style={{ height: '6px', background: '#e2e8f0', borderRadius: '999px', overflow: 'hidden' }}>
                         <div style={{
@@ -108,15 +108,15 @@ export default function OnboardingPage({ onComplete }: OnboardingProps) {
 
                 {/* Card */}
                 <div style={{
-                    background: 'white', borderRadius: '20px',
-                    border: '1px solid #e2e8f0',
-                    boxShadow: '0 8px 40px rgba(0,0,0,0.06)',
+                    background: 'rgba(20,20,25,0.8)', borderRadius: '20px',
+                    border: '1px solid rgba(255,255,255,0.05)',
+                    boxShadow: '0 8px 40px rgba(0,0,0,0.4)',
                     padding: '40px',
                     animation: 'fadeIn 0.3s ease',
                     minHeight: '400px',
                 }}>
                     <h2 style={{
-                        fontSize: '24px', fontWeight: 800, color: '#0f172a',
+                        fontSize: '24px', fontWeight: 800, color: 'white',
                         fontFamily: 'Plus Jakarta Sans', marginBottom: '8px',
                     }}>
                         {stepTitles[step - 1]}
@@ -139,7 +139,7 @@ export default function OnboardingPage({ onComplete }: OnboardingProps) {
                                         placeholder={field.placeholder}
                                         style={{
                                             width: '100%', padding: '11px 14px', borderRadius: '10px',
-                                            border: '1.5px solid #e2e8f0', fontSize: '14px', color: '#0f172a',
+                                            border: '1.5px solid #e2e8f0', fontSize: '14px', color: 'white',
                                             outline: 'none', fontFamily: 'Inter', transition: 'border-color 0.2s ease',
                                             boxSizing: 'border-box',
                                         }}
@@ -154,7 +154,7 @@ export default function OnboardingPage({ onComplete }: OnboardingProps) {
                                     <select style={{
                                         width: '100%', padding: '11px 14px', borderRadius: '10px',
                                         border: '1.5px solid #e2e8f0', fontSize: '14px', fontFamily: 'Inter',
-                                        outline: 'none', background: 'white',
+                                        outline: 'none', background: 'rgba(20,20,25,0.8)',
                                     }}>
                                         {['2025', '2026', '2027', '2028'].map(y => <option key={y}>{y}</option>)}
                                     </select>
@@ -176,7 +176,7 @@ export default function OnboardingPage({ onComplete }: OnboardingProps) {
                     {/* Step 2 — skills */}
                     {step === 2 && (
                         <div style={{ marginTop: '16px' }}>
-                            <p style={{ fontSize: '14px', color: '#64748b', marginBottom: '20px' }}>
+                            <p style={{ fontSize: '14px', color: '#9ca3af', marginBottom: '20px' }}>
                                 Select all the skills you can demonstrate. You'll be matched based on your actual proof of these skills.
                             </p>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -213,33 +213,33 @@ export default function OnboardingPage({ onComplete }: OnboardingProps) {
                     {/* Step 3 — Projects */}
                     {step === 3 && (
                         <div style={{ marginTop: '16px' }}>
-                            <p style={{ fontSize: '14px', color: '#64748b', marginBottom: '20px' }}>
+                            <p style={{ fontSize: '14px', color: '#9ca3af', marginBottom: '20px' }}>
                                 Add projects you've built. These become your proof-of-work and drive AI matching.
                             </p>
                             <div style={{
-                                background: '#f8fafc', borderRadius: '12px',
-                                border: '1px solid #e2e8f0', padding: '20px', marginBottom: '16px',
+                                background: '#050505', borderRadius: '12px',
+                                border: '1px solid rgba(255,255,255,0.05)', padding: '20px', marginBottom: '16px',
                             }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                                     <div style={{
                                         width: '40px', height: '40px', borderRadius: '10px',
-                                        background: '#eff6ff', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        background: 'rgba(109, 40, 217, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center',
                                     }}>
                                         <span style={{ fontSize: '18px' }}>📊</span>
                                     </div>
                                     <div>
-                                        <div style={{ fontWeight: 700, color: '#0f172a', fontSize: '14px' }}>Smart Campus Energy Monitor</div>
-                                        <div style={{ fontSize: '12px', color: '#64748b' }}>IoT · Python · Data Visualization</div>
+                                        <div style={{ fontWeight: 700, color: 'white', fontSize: '14px' }}>Smart Campus Energy Monitor</div>
+                                        <div style={{ fontSize: '12px', color: '#9ca3af' }}>IoT · Python · Data Visualization</div>
                                     </div>
                                     <CheckCircle size={18} color="#10b981" style={{ marginLeft: 'auto' }} />
                                 </div>
-                                <div style={{ fontSize: '12px', color: '#64748b' }}>Result: Reduced simulated energy consumption by 18%</div>
+                                <div style={{ fontSize: '12px', color: '#9ca3af' }}>Result: Reduced simulated energy consumption by 18%</div>
                             </div>
                             <button
                                 style={{
                                     width: '100%', padding: '14px', borderRadius: '12px',
                                     border: '2px dashed #e2e8f0', background: 'transparent',
-                                    color: '#64748b', fontSize: '14px', fontWeight: 500,
+                                    color: '#9ca3af', fontSize: '14px', fontWeight: 500,
                                     cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
                                     fontFamily: 'Inter',
                                 }}
@@ -253,7 +253,7 @@ export default function OnboardingPage({ onComplete }: OnboardingProps) {
                     {/* Step 4 — Looking for */}
                     {step === 4 && (
                         <div style={{ marginTop: '16px' }}>
-                            <p style={{ fontSize: '14px', color: '#64748b', marginBottom: '20px' }}>
+                            <p style={{ fontSize: '14px', color: '#9ca3af', marginBottom: '20px' }}>
                                 Select everything you're open to. You'll receive matching opportunities for each.
                             </p>
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
@@ -286,7 +286,7 @@ export default function OnboardingPage({ onComplete }: OnboardingProps) {
                     {/* Step 5 — Interests */}
                     {step === 5 && (
                         <div style={{ marginTop: '16px' }}>
-                            <p style={{ fontSize: '14px', color: '#64748b', marginBottom: '20px' }}>
+                            <p style={{ fontSize: '14px', color: '#9ca3af', marginBottom: '20px' }}>
                                 What domains excite you? This helps match you with the most relevant opportunities.
                             </p>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '24px' }}>

@@ -19,10 +19,10 @@ export default function TeamFormationPage({ onNavigate, showToast }: TeamFormati
     return (
         <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 24px', fontFamily: 'Inter, sans-serif' }}>
             <div style={{ marginBottom: '28px' }}>
-                <h1 style={{ fontSize: '26px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '6px' }}>
+                <h1 style={{ fontSize: '26px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '6px' }}>
                     Team Formation
                 </h1>
-                <p style={{ fontSize: '14px', color: '#64748b' }}>AI-recommended builders for your project</p>
+                <p style={{ fontSize: '14px', color: '#9ca3af' }}>AI-recommended builders for your project</p>
             </div>
 
             {/* Project */}
@@ -45,10 +45,10 @@ export default function TeamFormationPage({ onNavigate, showToast }: TeamFormati
 
             {/* Current Team */}
             <div style={{
-                background: 'white', borderRadius: '16px',
-                border: '1px solid #e2e8f0', padding: '24px', marginBottom: '24px',
+                background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                border: '1px solid rgba(255,255,255,0.05)', padding: '24px', marginBottom: '24px',
             }}>
-                <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '16px' }}>
+                <h2 style={{ fontSize: '16px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '16px' }}>
                     Current Team (3/4)
                 </h2>
                 <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
@@ -66,10 +66,10 @@ export default function TeamFormationPage({ onNavigate, showToast }: TeamFormati
                         }}>
                             <Avatar initials={member.avatar} size={36} />
                             <div>
-                                <div style={{ fontSize: '14px', fontWeight: 600, color: '#0f172a' }}>
-                                    {member.name} {member.you && <span style={{ fontSize: '10px', color: '#2563eb', fontWeight: 700 }}>(You)</span>}
+                                <div style={{ fontSize: '14px', fontWeight: 600, color: 'white' }}>
+                                    {member.name} {member.you && <span style={{ fontSize: '10px', color: '#a78bfa', fontWeight: 700 }}>(You)</span>}
                                 </div>
-                                <div style={{ fontSize: '11px', color: '#64748b' }}>{member.role}</div>
+                                <div style={{ fontSize: '11px', color: '#9ca3af' }}>{member.role}</div>
                             </div>
                         </div>
                     ))}
@@ -96,15 +96,15 @@ export default function TeamFormationPage({ onNavigate, showToast }: TeamFormati
 
             {/* AI Recommendations */}
             <div style={{
-                background: 'white', borderRadius: '16px',
-                border: '1px solid #e2e8f0', padding: '24px',
+                background: 'rgba(20,20,25,0.8)', borderRadius: '16px',
+                border: '1px solid rgba(255,255,255,0.05)', padding: '24px',
             }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
                     <div>
-                        <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '4px' }}>
+                        <h2 style={{ fontSize: '16px', fontWeight: 700, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: '4px' }}>
                             🤖 AI Recommended Builders
                         </h2>
-                        <p style={{ fontSize: '13px', color: '#64748b' }}>
+                        <p style={{ fontSize: '13px', color: '#9ca3af' }}>
                             3 builders in the network match the <strong>Frontend Developer</strong> role.
                         </p>
                     </div>
@@ -113,7 +113,7 @@ export default function TeamFormationPage({ onNavigate, showToast }: TeamFormati
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                     {mockTeamMembers.map((member, i) => (
                         <div key={member.id} style={{
-                            border: '1px solid #e2e8f0', borderRadius: '14px',
+                            border: '1px solid rgba(255,255,255,0.05)', borderRadius: '14px',
                             padding: '20px', display: 'flex', gap: '16px',
                             alignItems: 'center', transition: 'all 0.2s ease',
                             background: '#fafafa',
@@ -148,7 +148,7 @@ export default function TeamFormationPage({ onNavigate, showToast }: TeamFormati
                             </div>
                             <div style={{ flex: 1, minWidth: 0 }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
-                                    <span style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a' }}>{member.name}</span>
+                                    <span style={{ fontSize: '15px', fontWeight: 700, color: 'white' }}>{member.name}</span>
                                     {i === 0 && (
                                         <span style={{
                                             padding: '2px 8px', borderRadius: '999px', fontSize: '10px', fontWeight: 700,
@@ -156,7 +156,7 @@ export default function TeamFormationPage({ onNavigate, showToast }: TeamFormati
                                         }}>⭐ Top Pick</span>
                                     )}
                                 </div>
-                                <div style={{ fontSize: '12px', color: '#64748b', marginBottom: '10px' }}>
+                                <div style={{ fontSize: '12px', color: '#9ca3af', marginBottom: '10px' }}>
                                     {member.role} · {member.university}
                                     <span style={{ color: member.available ? '#10b981' : '#ef4444', fontWeight: 600, marginLeft: '8px' }}>
                                         ● {member.available ? 'Available' : 'Busy'}
@@ -166,8 +166,8 @@ export default function TeamFormationPage({ onNavigate, showToast }: TeamFormati
                                     {member.skills.map(s => <SkillBadge key={s} skill={s} />)}
                                 </div>
                                 <div style={{ display: 'flex', gap: '16px' }}>
-                                    <div style={{ fontSize: '12px', color: '#64748b' }}>
-                                        Proof Score: <span style={{ fontWeight: 700, color: '#0f172a' }}>{member.proofScore}</span>
+                                    <div style={{ fontSize: '12px', color: '#9ca3af' }}>
+                                        Proof Score: <span style={{ fontWeight: 700, color: 'white' }}>{member.proofScore}</span>
                                     </div>
                                 </div>
                             </div>
