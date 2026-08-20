@@ -1,471 +1,368 @@
-import { ArrowRight, Zap, Building2 } from 'lucide-react';
+import { ArrowRight, Play, CheckCircle2, Check } from 'lucide-react';
 
 interface LandingPageProps {
     onNavigate: (page: string) => void;
 }
 
-function FlowStep({ icon, label, delay = 0 }: { icon: string; label: string; delay?: number }) {
-    return (
-        <div style={{
-            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px',
-            animation: `fadeIn 0.5s ease ${delay}ms both`,
-        }}>
-            <div style={{
-                width: '64px', height: '64px', borderRadius: '16px',
-                background: 'white', border: '1px solid #e2e8f0',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '28px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
-            }}>{icon}</div>
-            <span style={{ fontSize: '13px', fontWeight: 700, color: '#0f172a', letterSpacing: '0.05em' }}>{label}</span>
-        </div>
-    );
-}
-
-function SectionHeading({ tag, title, subtitle }: { tag: string; title: string; subtitle?: string }) {
-    return (
-        <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto 60px' }}>
-            <span style={{
-                display: 'inline-block', padding: '4px 14px', borderRadius: '999px',
-                background: '#eff6ff', color: '#2563eb', fontSize: '12px', fontWeight: 700,
-                letterSpacing: '0.08em', border: '1px solid #bfdbfe', marginBottom: '16px',
-            }}>
-                {tag}
-            </span>
-            <h2 style={{
-                fontSize: '36px', fontWeight: 800, color: '#0f172a',
-                lineHeight: 1.2, fontFamily: 'Plus Jakarta Sans', marginBottom: '16px',
-            }}>
-                {title}
-            </h2>
-            {subtitle && (
-                <p style={{ fontSize: '16px', color: '#64748b', lineHeight: 1.7 }}>{subtitle}</p>
-            )}
-        </div>
-    );
-}
-
 export default function LandingPage({ onNavigate }: LandingPageProps) {
     return (
-        <div style={{ background: 'white', minHeight: '100vh', fontFamily: 'Inter, sans-serif' }}>
-            {/* HERO NAV */}
+        <div style={{ backgroundColor: '#050505', minHeight: '100vh', fontFamily: 'Inter, sans-serif', color: 'white', overflowX: 'hidden' }}>
+            {/* Navbar */}
             <header style={{
-                position: 'sticky', top: 0, zIndex: 100,
-                background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(12px)',
-                borderBottom: '1px solid #e2e8f0',
                 display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                padding: '0 48px', height: '64px',
+                padding: '16px 48px', borderBottom: '1px solid rgba(255,255,255,0.05)',
+                position: 'sticky', top: 0, zIndex: 100, backdropFilter: 'blur(12px)',
+                background: 'rgba(5, 5, 5, 0.8)'
             }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <div style={{
                         width: '32px', height: '32px', borderRadius: '8px',
-                        background: 'linear-gradient(135deg, #2563eb, #4f46e5)',
+                        background: 'linear-gradient(135deg, #7c3aed, #4f46e5)',
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                     }}>
-                        <span style={{ color: 'white', fontWeight: 800, fontSize: '15px', fontFamily: 'Plus Jakarta Sans' }}>Z</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 7H14.5L10.5 17H20" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
                     </div>
-                    <span style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 800, fontSize: '20px', color: '#0f172a', letterSpacing: '-0.5px' }}>ZUNIVA</span>
+                    <span style={{ fontWeight: 700, fontSize: '20px', letterSpacing: '-0.5px' }}>Zuniva</span>
                 </div>
-                <nav style={{ display: 'flex', gap: '32px' }}>
-                    {[
-                        { label: 'Features', action: 'opportunities' },
-                        { label: 'For Students', action: 'dashboard' },
-                        { label: 'For Companies', action: 'company-dashboard' },
-                        { label: 'Challenges', action: 'challenges' }
-                    ].map(item => (
-                        <button key={item.label} onClick={() => onNavigate(item.action)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#64748b', fontSize: '14px', fontWeight: 500, fontFamily: 'Inter' }}>
-                            {item.label}
+
+                <nav style={{ gap: '32px', display: 'none', '@media(min-width: 768px)': { display: 'flex' } } as any}>
+                    {['Platform', 'Solutions', 'Investors', 'Resources', 'Pricing'].map(item => (
+                        <button key={item} style={{
+                            background: 'none', border: 'none', color: '#9ca3af',
+                            fontSize: '14px', fontWeight: 500, cursor: 'pointer', transition: 'color 0.2s',
+                        }} onMouseOver={e => e.currentTarget.style.color = 'white'} onMouseOut={e => e.currentTarget.style.color = '#9ca3af'}>
+                            {item}
                         </button>
                     ))}
                 </nav>
+
                 <div style={{ display: 'flex', gap: '12px' }}>
-                    <button onClick={() => onNavigate('onboarding')} className="btn-secondary" style={{ padding: '8px 18px', fontSize: '13px' }}>
-                        Log In
+                    <button onClick={() => onNavigate('onboarding')} style={{
+                        background: 'transparent', border: '1px solid #333', color: 'white',
+                        padding: '8px 16px', borderRadius: '8px', fontSize: '13px', fontWeight: 500, cursor: 'pointer',
+                        transition: 'all 0.2s'
+                    }} onMouseOver={e => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'} onMouseOut={e => e.currentTarget.style.background = 'transparent'}>
+                        Log in
                     </button>
-                    <button onClick={() => onNavigate('onboarding')} className="btn-primary" style={{ padding: '8px 18px', fontSize: '13px' }}>
-                        Get Started
+                    <button onClick={() => onNavigate('onboarding')} style={{
+                        background: '#6d28d9', border: 'none', color: 'white',
+                        padding: '8px 16px', borderRadius: '8px', fontSize: '13px', fontWeight: 500, cursor: 'pointer',
+                        boxShadow: '0 0 20px rgba(109, 40, 217, 0.4)', transition: 'all 0.2s'
+                    }} onMouseOver={e => e.currentTarget.style.background = '#7c3aed'} onMouseOut={e => e.currentTarget.style.background = '#6d28d9'}>
+                        Book a Demo
                     </button>
                 </div>
             </header>
 
-            {/* HERO */}
-            <section style={{
-                minHeight: 'calc(100vh - 64px)',
-                background: 'linear-gradient(170deg, #f8faff 0%, #ffffff 50%, #f0f9ff 100%)',
-                display: 'flex', flexDirection: 'column',
-                alignItems: 'center', justifyContent: 'center',
-                padding: '80px 48px', textAlign: 'center',
-                position: 'relative', overflow: 'hidden',
-            }}>
-                {/* Background decoration */}
-                <div style={{
-                    position: 'absolute', top: '10%', left: '5%',
-                    width: '400px', height: '400px', borderRadius: '50%',
-                    background: 'radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%)',
-                    pointerEvents: 'none',
-                }} />
-                <div style={{
-                    position: 'absolute', bottom: '10%', right: '5%',
-                    width: '300px', height: '300px', borderRadius: '50%',
-                    background: 'radial-gradient(circle, rgba(79,70,229,0.06) 0%, transparent 70%)',
-                    pointerEvents: 'none',
-                }} />
+            <main style={{ padding: '60px 48px', maxWidth: '1400px', margin: '0 auto' }}>
+                <div style={{ display: 'flex', gap: '64px', alignItems: 'center', marginBottom: '80px', flexWrap: 'wrap' }}>
+                    {/* Hero Left Content */}
+                    <div style={{ flex: '1', minWidth: '400px' }}>
+                        <div style={{
+                            display: 'inline-flex', alignItems: 'center', gap: '8px',
+                            background: 'rgba(109, 40, 217, 0.1)', border: '1px solid rgba(139, 92, 246, 0.2)',
+                            borderRadius: '999px', padding: '6px 14px', marginBottom: '24px'
+                        }}>
+                            <span style={{ fontSize: '12px', fontWeight: 600, color: '#a78bfa' }}>The Venture Studio OS</span>
+                            <span style={{ fontSize: '10px', background: 'rgba(139, 92, 246, 0.2)', padding: '2px 6px', borderRadius: '4px', color: '#c4b5fd' }}>BETA</span>
+                        </div>
+                        <h1 style={{
+                            fontSize: 'clamp(48px, 5vw, 68px)', fontWeight: 800, lineHeight: 1.1,
+                            letterSpacing: '-2px', marginBottom: '24px'
+                        }}>
+                            From Weekend<br />Hackathon to<br />
+                            <span style={{ color: '#a78bfa' }}>Seed Funded</span>
+                        </h1>
+                        <p style={{
+                            fontSize: '18px', color: '#9ca3af', lineHeight: 1.6,
+                            marginBottom: '40px', maxWidth: '480px'
+                        }}>
+                            Zuniva transforms your hack into a real startup. We handle the infra, legal, and investor pipeline so you can focus on building.
+                        </p>
 
-                <div style={{ position: 'relative', zIndex: 1, maxWidth: '800px' }}>
-                    <div style={{
-                        display: 'inline-flex', alignItems: 'center', gap: '8px',
-                        background: 'white', border: '1px solid #e2e8f0',
-                        borderRadius: '999px', padding: '6px 16px',
-                        marginBottom: '32px',
-                        boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
-                    }}>
-                        <Zap size={13} fill="#f59e0b" color="#f59e0b" />
-                        <span style={{ fontSize: '12px', fontWeight: 700, color: '#64748b', letterSpacing: '0.05em' }}>
-                            THE PROOF-OF-WORK NETWORK FOR EMERGING TALENT
-                        </span>
-                    </div>
+                        <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '48px' }}>
+                            <button onClick={() => onNavigate('onboarding')} style={{
+                                background: '#6d28d9', color: 'white', border: 'none',
+                                padding: '14px 28px', borderRadius: '8px', fontSize: '15px', fontWeight: 600,
+                                display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer',
+                                boxShadow: '0 0 30px rgba(109, 40, 217, 0.4)'
+                            }}>
+                                Launch Your Project <ArrowRight size={18} />
+                            </button>
+                            <button style={{
+                                background: 'rgba(255,255,255,0.03)', color: 'white', border: '1px solid rgba(255,255,255,0.1)',
+                                padding: '14px 28px', borderRadius: '8px', fontSize: '15px', fontWeight: 600,
+                                display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer',
+                            }}>
+                                How it Works <div style={{ width: 20, height: 20, borderRadius: '50%', background: '#333', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Play size={10} fill="white" /></div>
+                            </button>
+                        </div>
 
-                    <h1 style={{
-                        fontSize: 'clamp(40px, 6vw, 72px)',
-                        fontWeight: 900, color: '#0f172a',
-                        lineHeight: 1.1, fontFamily: 'Plus Jakarta Sans',
-                        letterSpacing: '-2px', marginBottom: '24px',
-                    }}>
-                        Your skills deserve<br />
-                        <span style={{ color: '#2563eb' }}>more than a resume.</span>
-                    </h1>
-
-                    <p style={{
-                        fontSize: '20px', color: '#475569',
-                        lineHeight: 1.7, maxWidth: '560px', margin: '0 auto 48px',
-                    }}>
-                        Build real projects, prove what you can do, and get matched with the right people, companies, and opportunities.
-                    </p>
-
-                    <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '64px' }}>
-                        <button onClick={() => onNavigate('onboarding')} className="btn-primary"
-                            style={{ padding: '16px 32px', fontSize: '16px', borderRadius: '12px' }}>
-                            Start Building <ArrowRight size={18} />
-                        </button>
-                        <button onClick={() => onNavigate('opportunities')} className="btn-secondary"
-                            style={{ padding: '16px 32px', fontSize: '16px', borderRadius: '12px' }}>
-                            Explore Opportunities
-                        </button>
-                    </div>
-
-                    {/* Flow */}
-                    <div style={{
-                        display: 'flex', alignItems: 'center', gap: '8px',
-                        justifyContent: 'center', flexWrap: 'wrap',
-                    }}>
-                        {[
-                            { icon: '📚', label: 'LEARN' },
-                            { icon: '🏆', label: 'COMPETE' },
-                            { icon: '🔨', label: 'BUILD' },
-                            { icon: '✅', label: 'PROVE' },
-                            { icon: '🤝', label: 'MATCH' },
-                            { icon: '🚀', label: 'GROW' },
-                        ].map((step, i) => (
-                            <div key={step.label} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                <FlowStep icon={step.icon} label={step.label} delay={i * 80} />
-                                {i < 5 && (
-                                    <div style={{ color: '#94a3b8', fontSize: '18px', paddingBottom: '24px' }}>→</div>
-                                )}
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                            <span style={{ fontSize: '14px', color: '#6b7280' }}>Trusted by 2,000+ builders from</span>
+                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                {[1, 2, 3, 4, 5].map((i) => (
+                                    <div key={i} style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#333', border: '2px solid #050505', marginLeft: i > 1 ? '-10px' : '0', backgroundImage: `url(https://i.pravatar.cc/100?img=${i + 10})`, backgroundSize: 'cover' }} />
+                                ))}
+                                <span style={{ fontSize: '12px', color: '#9ca3af', marginLeft: '8px' }}>+1.2K</span>
                             </div>
-                        ))}
+                        </div>
+                    </div>
+
+                    {/* Hero Right Visual */}
+                    <div style={{ flex: '1.2', minWidth: '500px', position: 'relative', height: '500px', display: 'flex', flexDirection: 'column' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', gap: '20px', alignItems: 'flex-start', flex: 1 }}>
+                            {/* Card 1 */}
+                            <div style={{ background: 'rgba(20,20,25,0.8)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px', padding: '16px', width: '200px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                                <div style={{ fontSize: '12px', color: '#9ca3af', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                    <span style={{ color: 'white', fontWeight: 600 }}>1</span> Pull Request Merged
+                                </div>
+                                <div style={{ background: '#111', borderRadius: '12px', padding: '16px', border: '1px solid #222' }}>
+                                    <div style={{ fontSize: '13px', color: '#e5e7eb', marginBottom: '12px', fontWeight: 500 }}>feat: AI matching engine<br /><span style={{ color: '#6b7280', fontSize: '11px' }}>#492</span></div>
+                                    <div style={{ background: 'rgba(139, 92, 246, 0.2)', color: '#a78bfa', fontSize: '11px', padding: '4px 8px', borderRadius: '4px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                                        <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#a78bfa' }} /> Merged
+                                    </div>
+                                </div>
+                                <div style={{ fontSize: '11px' }}>
+                                    <div style={{ color: '#10b981', marginBottom: '4px' }}>+ 1,248 additions</div>
+                                    <div style={{ color: '#f43f5e' }}>- 32 deletions</div>
+                                </div>
+                                <div style={{ marginTop: 'auto' }}>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#6b7280"><path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.379.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z" /></svg>
+                                </div>
+                            </div>
+
+                            {/* Card 2 */}
+                            <div style={{ background: 'rgba(20,20,25,0.8)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px', padding: '16px', width: '200px', display: 'flex', flexDirection: 'column', gap: '16px', transform: 'translateY(-20px)' }}>
+                                <div style={{ fontSize: '12px', color: '#9ca3af', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                    <span style={{ color: 'white', fontWeight: 600 }}>2</span> Incorporated
+                                </div>
+                                <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', padding: '20px 16px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                                    <div style={{ width: '40px', height: '40px', background: 'rgba(255,255,255,0.9)', borderRadius: '4px', marginBottom: '16px' }} />
+                                    <div style={{ fontSize: '13px', fontWeight: 600, color: 'white', marginBottom: '8px' }}>Certificate<br />of Incorporation</div>
+                                    <div style={{ fontSize: '11px', color: '#9ca3af', marginBottom: '12px' }}>Zuniva Labs Pvt. Ltd.</div>
+                                    <div style={{ background: 'rgba(16, 185, 129, 0.2)', color: '#10b981', fontSize: '10px', padding: '4px 12px', borderRadius: '12px' }}>Registered</div>
+                                </div>
+                            </div>
+
+                            {/* Card 3 */}
+                            <div style={{ background: 'rgba(20,20,25,0.8)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px', padding: '16px', width: '200px', display: 'flex', flexDirection: 'column', gap: '16px', transform: 'translateY(-40px)' }}>
+                                <div style={{ fontSize: '12px', color: '#9ca3af', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                    <span style={{ color: 'white', fontWeight: 600 }}>3</span> Seed Round
+                                </div>
+                                <div style={{ background: '#111', borderRadius: '12px', padding: '20px 16px', border: '1px solid #222' }}>
+                                    <div style={{ fontSize: '24px', fontWeight: 700, color: 'white', marginBottom: '4px' }}>$1.2M</div>
+                                    <div style={{ fontSize: '13px', color: '#10b981', fontWeight: 600, marginBottom: '20px' }}>Seed Round</div>
+                                    <div style={{ fontSize: '11px', color: '#6b7280', marginBottom: '4px' }}>Led by</div>
+                                    <div style={{ fontSize: '12px', color: 'white', fontWeight: 500, marginBottom: '20px' }}>Ascend Capital</div>
+
+                                    <div style={{ fontSize: '10px', color: '#9ca3af', marginBottom: '8px' }}>+12 Investors</div>
+                                    <div style={{ display: 'flex' }}>
+                                        {[6, 7, 8, 9, 10].map((i) => (
+                                            <div key={i} style={{ width: '20px', height: '20px', borderRadius: '50%', background: '#333', border: '2px solid #111', marginLeft: i > 6 ? '-8px' : '0', backgroundImage: `url(https://i.pravatar.cc/100?img=${i + 20})`, backgroundSize: 'cover' }} />
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Progression Line */}
+                        <div style={{ position: 'relative', height: '100px', width: '100%', display: 'flex', alignItems: 'center' }}>
+                            <div style={{ position: 'absolute', top: '50%', left: '10%', right: '10%', height: '2px', background: 'linear-gradient(90deg, rgba(139,92,246,0) 0%, rgba(139,92,246,1) 50%, rgba(139,92,246,0) 100%)', boxShadow: '0 0 15px rgba(139,92,246,0.8)' }} />
+                            {/* Dots */}
+                            <div style={{ position: 'absolute', top: 'calc(50% - 6px)', left: '15%', width: '12px', height: '12px', borderRadius: '50%', background: 'white', boxShadow: '0 0 10px #a78bfa' }} />
+                            <div style={{ position: 'absolute', top: 'calc(50% - 6px)', left: '50%', width: '12px', height: '12px', borderRadius: '50%', background: 'white', boxShadow: '0 0 10px #a78bfa' }} />
+                            <div style={{ position: 'absolute', top: 'calc(50% - 6px)', left: '85%', width: '12px', height: '12px', borderRadius: '50%', background: 'white', boxShadow: '0 0 10px #a78bfa' }} />
+                        </div>
+
+                        <div style={{ alignSelf: 'center', background: 'rgba(109,40,217, 0.2)', border: '1px solid rgba(139,92,246,0.3)', padding: '8px 20px', borderRadius: '999px', fontSize: '13px', color: '#ddd' }}>
+                            We automate the journey.
+                        </div>
                     </div>
                 </div>
-            </section>
 
-            {/* DASHBOARD PREVIEW */}
-            <section style={{ padding: '80px 48px', background: '#f8fafc' }}>
-                <SectionHeading
-                    tag="PLATFORM PREVIEW"
-                    title="One profile. Your entire proof-of-work."
-                    subtitle="Students have projects, hackathons, certifications, GitHub repos — but it's scattered. ZUNIVA brings it all together."
-                />
+                {/* Features 3 Columns */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px', marginBottom: '24px' }}>
 
-                {/* Preview card */}
-                <div style={{
-                    maxWidth: '900px', margin: '0 auto',
-                    background: 'white', borderRadius: '20px',
-                    border: '1px solid #e2e8f0',
-                    boxShadow: '0 24px 80px rgba(0,0,0,0.08)',
-                    overflow: 'hidden',
-                }}>
-                    {/* Profile Header */}
-                    <div style={{
-                        background: 'linear-gradient(135deg, #0a1628 0%, #162b57 100%)',
-                        padding: '32px 40px', display: 'flex', alignItems: 'center', gap: '24px',
-                    }}>
-                        <div style={{
-                            width: '80px', height: '80px', borderRadius: '50%',
-                            background: 'linear-gradient(135deg, #2563eb, #4f46e5)',
-                            display: 'flex', alignItems: 'center', justifyContent: 'center',
-                            fontSize: '28px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans',
-                            border: '3px solid rgba(255,255,255,0.2)',
-                        }}>AS</div>
-                        <div style={{ color: 'white' }}>
-                            <div style={{ fontSize: '22px', fontWeight: 800, fontFamily: 'Plus Jakarta Sans' }}>Aarav Sharma</div>
-                            <div style={{ fontSize: '14px', color: '#94a3b8', marginTop: '4px' }}>Computer Engineering · 3rd Year · IIT Madras</div>
-                            <div style={{ fontSize: '13px', color: '#60a5fa', marginTop: '6px' }}>Building at the intersection of AI, IoT & Robotics.</div>
-                        </div>
-                        <div style={{ marginLeft: 'auto', textAlign: 'center' }}>
-                            <div style={{ fontSize: '36px', fontWeight: 900, color: 'white', fontFamily: 'Plus Jakarta Sans', lineHeight: 1 }}>86</div>
-                            <div style={{ fontSize: '10px', color: '#94a3b8', fontWeight: 700, letterSpacing: '0.08em' }}>PROOF SCORE</div>
-                        </div>
-                    </div>
+                    {/* Feature 1 */}
+                    <div style={{ background: 'rgba(20,20,25,0.6)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+                        <div style={{ fontSize: '10px', fontWeight: 700, color: '#a78bfa', letterSpacing: '1px', marginBottom: '12px' }}>AUTOMATIC INGESTION</div>
+                        <h3 style={{ fontSize: '24px', fontWeight: 600, marginBottom: '8px' }}>Hackathon &rarr;<br />Real-World Pipeline</h3>
+                        <p style={{ fontSize: '14px', color: '#9ca3af', marginBottom: '32px', lineHeight: 1.6 }}>We automatically ingest your hackathon submission from leading platforms.</p>
 
-                    {/* Stats row */}
-                    <div style={{
-                        display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)',
-                        borderBottom: '1px solid #e2e8f0',
-                    }}>
-                        {[
-                            { value: '8', label: 'Projects' },
-                            { value: '5', label: 'Challenges' },
-                            { value: '3', label: 'Hackathons' },
-                            { value: '14', label: 'Skills' },
-                            { value: '12', label: 'Collaborations' },
-                        ].map((stat, i) => (
-                            <div key={stat.label} style={{
-                                padding: '20px', textAlign: 'center',
-                                borderRight: i < 4 ? '1px solid #e2e8f0' : 'none',
-                            }}>
-                                <div style={{ fontSize: '24px', fontWeight: 800, color: '#0f172a', fontFamily: 'Plus Jakarta Sans' }}>{stat.value}</div>
-                                <div style={{ fontSize: '12px', color: '#94a3b8', fontWeight: 500, marginTop: '4px' }}>{stat.label}</div>
+                        <div style={{ background: '#111', borderRadius: '16px', padding: '24px', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+                            <div style={{ display: 'flex', gap: '8px', zIndex: 1, marginBottom: '20px' }}>
+                                <div style={{ background: '#1e293b', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                    <span style={{ color: '#38bdf8', fontWeight: 800 }}>D</span> Devpost
+                                </div>
+                                <div style={{ background: '#1e293b', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', fontWeight: 600 }}>MLH</div>
                             </div>
-                        ))}
+                            <div style={{ width: '120px', height: '120px', position: 'relative', background: 'radial-gradient(circle, rgba(139,92,246,0.4) 0%, transparent 70%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <div style={{ width: '60px', height: '60px', background: 'linear-gradient(135deg, #a78bfa, #6d28d9)', transform: 'rotateX(60deg) rotateZ(-45deg)', borderRadius: '8px', boxShadow: '0 20px 40px rgba(109,40,217,0.5)', position: 'relative' }}>
+                                    <div style={{ position: 'absolute', top: -30, left: 10, width: 40, height: 40, background: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)', transform: 'translateZ(20px)', borderRadius: '4px', opacity: 0.8 }} />
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    {/* Skills */}
-                    <div style={{ padding: '24px 40px' }}>
-                        <div style={{ fontSize: '13px', fontWeight: 700, color: '#64748b', letterSpacing: '0.05em', marginBottom: '14px' }}>SKILLS DEMONSTRATED</div>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                            {['Python', 'AI/ML', 'IoT', 'Robotics', 'React', 'Product Design', 'TensorFlow', 'Data Science'].map(s => (
-                                <span key={s} style={{
-                                    padding: '5px 14px', borderRadius: '999px', fontSize: '13px', fontWeight: 600,
-                                    background: '#eff6ff', color: '#2563eb', border: '1px solid #bfdbfe',
-                                }}>{s}</span>
+                    {/* Feature 2 */}
+                    <div style={{ background: 'rgba(20,20,25,0.6)', border: '1px solid rgba(16,185,129,0.2)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+                        <div style={{ fontSize: '10px', fontWeight: 700, color: '#10b981', letterSpacing: '1px', marginBottom: '12px' }}>PROOF-OF-WORK</div>
+                        <h3 style={{ fontSize: '24px', fontWeight: 600, marginBottom: '32px' }}>Real-time Maturity Score</h3>
+
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '32px' }}>
+                            <div style={{ width: '140px', height: '140px', borderRadius: '50%', border: '8px solid #222', borderTopColor: '#10b981', borderRightColor: '#10b981', borderBottomColor: '#10b981', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 30px rgba(16,185,129,0.2)' }}>
+                                <span style={{ fontSize: '40px', fontWeight: 700, lineHeight: 1 }}>72</span>
+                                <span style={{ fontSize: '12px', color: '#9ca3af' }}>/100</span>
+                            </div>
+                            <div style={{ marginTop: '16px', background: 'rgba(16,185,129,0.1)', color: '#10b981', padding: '4px 12px', borderRadius: '4px', fontSize: '11px', fontWeight: 700 }}>STRONG TRACTION</div>
+                        </div>
+
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                            {[
+                                { name: 'Product', s: 80 },
+                                { name: 'Team', s: 70 },
+                                { name: 'Traction', s: 65 },
+                                { name: 'Business', s: 75 },
+                            ].map(item => (
+                                <div key={item.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '13px' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#d1d5db' }}>
+                                        <CheckCircle2 fill="#10b981" color="black" size={14} /> {item.name}
+                                    </div>
+                                    <span style={{ color: '#9ca3af' }}>{item.s}/100</span>
+                                </div>
                             ))}
                         </div>
                     </div>
-                </div>
-            </section>
 
-            {/* REAL WORLD PROJECTS */}
-            <section style={{ padding: '80px 48px', background: 'white' }}>
-                <SectionHeading
-                    tag="HOW IT WORKS"
-                    title="Opportunities become real when you build."
-                    subtitle="Companies post real problems. AI finds the right builders. Teams form, projects get completed, and the work becomes proof."
-                />
+                    {/* Feature 3 */}
+                    <div style={{ background: 'rgba(20,20,25,0.6)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+                        <div style={{ fontSize: '10px', fontWeight: 700, color: '#a78bfa', letterSpacing: '1px', marginBottom: '12px' }}>INVESTOR DEAL-FLOW</div>
+                        <h3 style={{ fontSize: '24px', fontWeight: 600, marginBottom: '8px' }}>Live Investor Opportunities</h3>
+                        <p style={{ fontSize: '14px', color: '#9ca3af', marginBottom: '24px' }}>Curated deals. Real-time updates.</p>
 
-                <div style={{
-                    maxWidth: '900px', margin: '0 auto',
-                    display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)',
-                    gap: '0', alignItems: 'center',
-                }}>
-                    {[
-                        { icon: '🏢', title: 'Company posts a problem', color: '#eff6ff' },
-                        { icon: '🤖', title: 'AI identifies builders', color: '#f5f3ff' },
-                        { icon: '👥', title: 'Team forms', color: '#f0fdf4' },
-                        { icon: '🧑‍🏫', title: 'Mentor joins', color: '#fff7ed' },
-                        { icon: '🔨', title: 'Project completed', color: '#eff6ff' },
-                        { icon: '✅', title: 'Work becomes proof', color: '#f0fdf4' },
-                        { icon: '🚀', title: 'Talent discovered', color: '#f5f3ff' },
-                    ].map((step, i) => (
-                        <div key={i} style={{ display: 'flex', alignItems: 'center' }}>
-                            <div style={{
-                                display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px',
-                                padding: '20px 8px', flex: 1,
-                            }}>
-                                <div style={{
-                                    width: '56px', height: '56px', borderRadius: '16px',
-                                    background: step.color, display: 'flex', alignItems: 'center',
-                                    justifyContent: 'center', fontSize: '24px',
-                                    boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
-                                }}>
-                                    {step.icon}
-                                </div>
-                                <div style={{ fontSize: '11px', fontWeight: 600, color: '#64748b', textAlign: 'center', lineHeight: 1.3 }}>
-                                    {step.title}
-                                </div>
-                            </div>
-                            {i < 6 && <div style={{ color: '#94a3b8', fontSize: '18px' }}>→</div>}
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            {/* AI MATCHING */}
-            <section style={{ padding: '80px 48px', background: '#f8fafc' }}>
-                <SectionHeading
-                    tag="AI MATCHING"
-                    title="The right opportunity, not just another opportunity."
-                />
-                <div style={{
-                    maxWidth: '600px', margin: '0 auto',
-                    background: 'white', borderRadius: '20px',
-                    border: '1px solid #e2e8f0',
-                    padding: '32px',
-                    boxShadow: '0 8px 40px rgba(0,0,0,0.06)',
-                }}>
-                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '24px', marginBottom: '28px' }}>
-                        <div style={{
-                            display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-                            background: '#f0fdf4', borderRadius: '50%',
-                            width: '88px', height: '88px', flexShrink: 0,
-                        }}>
-                            <span style={{ fontSize: '32px', fontWeight: 900, color: '#10b981', fontFamily: 'Plus Jakarta Sans', lineHeight: 1 }}>92%</span>
-                            <span style={{ fontSize: '10px', fontWeight: 700, color: '#059669', letterSpacing: '0.05em' }}>MATCH</span>
-                        </div>
-                        <div>
-                            <div style={{ fontSize: '18px', fontWeight: 700, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '8px' }}>
-                                AI Research Intern — Vertex AI
-                            </div>
-                            <p style={{ fontSize: '14px', color: '#64748b', lineHeight: 1.6 }}>
-                                "Strong match because of your IoT project, Python skills, robotics experience and interest in hardware startups."
-                            </p>
-                        </div>
-                    </div>
-                    {[
-                        { label: 'Skills', value: 94 },
-                        { label: 'Experience', value: 88 },
-                        { label: 'Interest', value: 91 },
-                        { label: 'Project Relevance', value: 95 },
-                    ].map(item => (
-                        <div key={item.label} style={{ marginBottom: '12px' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
-                                <span style={{ fontSize: '13px', color: '#64748b', fontWeight: 500 }}>{item.label}</span>
-                                <span style={{ fontSize: '13px', fontWeight: 700, color: '#10b981' }}>{item.value}%</span>
-                            </div>
-                            <div style={{ height: '6px', background: '#e2e8f0', borderRadius: '999px', overflow: 'hidden' }}>
-                                <div style={{ width: `${item.value}%`, height: '100%', background: '#10b981', borderRadius: '999px' }} />
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            {/* FOR COMPANIES */}
-            <section style={{ padding: '80px 48px', background: 'linear-gradient(135deg, #0a1628, #162b57)' }}>
-                <div style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }}>
-                    <div>
-                        <span style={{
-                            display: 'inline-block', padding: '4px 14px', borderRadius: '999px',
-                            background: 'rgba(37,99,235,0.3)', color: '#60a5fa',
-                            fontSize: '12px', fontWeight: 700, letterSpacing: '0.08em', marginBottom: '20px',
-                            border: '1px solid rgba(96,165,250,0.3)',
-                        }}>FOR COMPANIES</span>
-                        <h2 style={{
-                            fontSize: '40px', fontWeight: 800, color: 'white',
-                            fontFamily: 'Plus Jakarta Sans', lineHeight: 1.2, marginBottom: '20px',
-                        }}>
-                            Discover builders,<br />not just resumes.
-                        </h2>
-                        <p style={{ fontSize: '16px', color: '#94a3b8', lineHeight: 1.7, marginBottom: '32px' }}>
-                            Find verified talent, post real problems, build project teams, run challenges, and hire proven builders with demonstrated capabilities.
-                        </p>
-                        <button onClick={() => onNavigate('company-dashboard')} className="btn-primary">
-                            <Building2 size={16} />
-                            For Companies <ArrowRight size={16} />
-                        </button>
-                    </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                        {[
-                            { icon: '✅', text: 'Find verified talent with proof-of-work' },
-                            { icon: '📋', text: 'Post real business problems as projects' },
-                            { icon: '👥', text: 'Build project teams from the talent pool' },
-                            { icon: '🏆', text: 'Run challenges to discover top builders' },
-                            { icon: '🤖', text: 'AI-powered talent matching and discovery' },
-                        ].map(item => (
-                            <div key={item.text} style={{
-                                display: 'flex', alignItems: 'center', gap: '14px',
-                                background: 'rgba(255,255,255,0.05)', borderRadius: '12px',
-                                padding: '14px 18px', border: '1px solid rgba(255,255,255,0.08)',
-                            }}>
-                                <span style={{ fontSize: '18px' }}>{item.icon}</span>
-                                <span style={{ fontSize: '14px', color: '#cbd5e1', fontWeight: 500 }}>{item.text}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* FOR STUDENTS */}
-            <section style={{ padding: '80px 48px', background: 'white' }}>
-                <SectionHeading
-                    tag="FOR STUDENTS"
-                    title="Turn learning into opportunity."
-                />
-                <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
-                    <div style={{ display: 'flex', justifyContent: 'center', gap: '0', marginBottom: '40px' }}>
-                        {['Learn', 'Compete', 'Build', 'Prove', 'Get Discovered'].map((step, i) => (
-                            <div key={step} style={{ display: 'flex', alignItems: 'center' }}>
-                                <div style={{
-                                    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px',
-                                    minWidth: '100px', padding: '0 8px',
-                                }}>
-                                    <div style={{
-                                        width: '48px', height: '48px', borderRadius: '50%',
-                                        background: `hsl(${220 + i * 15}, 80%, 55%)`,
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                        color: 'white', fontWeight: 700, fontSize: '16px',
-                                    }}>
-                                        {i + 1}
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', flex: 1 }}>
+                            {[
+                                { name: 'Ascend Capital', info: 'Seed · $500K - $2M', tags: 'AI, Developer Tools, SaaS', l: 'A' },
+                                { name: 'Pioneer Fund', info: 'Pre-Seed · $250K - $1M', tags: 'Deep Tech, Frontier AI', l: 'P' },
+                                { name: 'Better Ventures', info: 'Seed · $1M - $3M', tags: 'Consumer, Marketplaces', l: 'B' },
+                            ].map(vc => (
+                                <div key={vc.name} style={{ background: '#111', borderRadius: '12px', padding: '16px', display: 'flex', alignItems: 'flex-start', gap: '16px', border: '1px solid #222' }}>
+                                    <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'white', color: 'black', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px', fontWeight: 800 }}>{vc.l}</div>
+                                    <div style={{ flex: 1 }}>
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '4px' }}>
+                                            <span style={{ fontSize: '14px', fontWeight: 600, color: 'white' }}>{vc.name}</span>
+                                            <span style={{ fontSize: '9px', background: 'rgba(16,185,129,0.1)', color: '#10b981', padding: '2px 6px', borderRadius: '4px', fontWeight: 600 }}>ACTIVE</span>
+                                        </div>
+                                        <div style={{ fontSize: '12px', color: '#9ca3af', marginBottom: '4px' }}>{vc.info}</div>
+                                        <div style={{ fontSize: '11px', color: '#6b7280' }}>{vc.tags}</div>
                                     </div>
-                                    <span style={{ fontSize: '12px', fontWeight: 700, color: '#0f172a' }}>{step}</span>
                                 </div>
-                                {i < 4 && <ArrowRight size={16} color="#94a3b8" />}
+                            ))}
+                        </div>
+
+                        <div style={{ marginTop: '24px', fontSize: '13px', color: '#9ca3af', display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer' }}>
+                            View all opportunities <ArrowRight size={14} />
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bottom Wide Sections */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)', gap: '24px', marginBottom: '24px' }}>
+                    {/* Legal & Infra */}
+                    <div style={{ background: 'rgba(20,20,25,0.6)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <div>
+                            <div style={{ fontSize: '10px', fontWeight: 700, color: '#a78bfa', letterSpacing: '1px', marginBottom: '12px' }}>LEGAL & INFRASTRUCTURE</div>
+                            <h3 style={{ fontSize: '28px', fontWeight: 600, marginBottom: '24px' }}>Everything, Automated</h3>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                {[
+                                    'Company Incorporation (Global)',
+                                    'Stripe Atlas Integration',
+                                    'AWS Activate Credits',
+                                    'Contracts & Compliance',
+                                    'Cap Table & Equity Mgmt.'
+                                ].map(t => (
+                                    <div key={t} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#d1d5db' }}>
+                                        <div style={{ background: '#10b981', borderRadius: '50%', padding: '2px' }}><Check size={12} color="black" /></div>
+                                        {t}
+                                    </div>
+                                ))}
                             </div>
-                        ))}
+                        </div>
+                        <div style={{ position: 'relative', width: '200px', height: '200px' }}>
+                            <div style={{ position: 'absolute', top: 40, right: 20, width: 120, height: 120, background: 'rgba(30,30,40,0.8)', border: '1px solid #444', borderRadius: '16px', transform: 'rotateX(55deg) rotateZ(-45deg)', boxShadow: '20px 20px 30px rgba(0,0,0,0.5)' }}></div>
+                            <div style={{ position: 'absolute', top: 20, right: 30, width: 120, height: 120, background: 'rgba(50,50,70,0.9)', border: '1px solid #666', borderRadius: '16px', transform: 'rotateX(55deg) rotateZ(-45deg)', boxShadow: '0 0 20px rgba(139,92,246,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <div style={{ width: 30, height: 30, background: '#a78bfa', borderRadius: '4px', transform: 'translateZ(30px)' }}></div>
+                            </div>
+                            <div style={{ position: 'absolute', top: 0, right: 40, width: 120, height: 120, background: 'linear-gradient(135deg, #222, #111)', border: '1px solid #333', borderRadius: '16px', transform: 'rotateX(55deg) rotateZ(-45deg)' }}></div>
+                        </div>
                     </div>
-                    <button onClick={() => onNavigate('onboarding')} className="btn-primary" style={{ padding: '16px 32px', fontSize: '16px', borderRadius: '12px' }}>
-                        Create Your Builder Profile <ArrowRight size={18} />
-                    </button>
-                </div>
-            </section>
 
-            {/* CTA */}
-            <section style={{
-                padding: '80px 48px', textAlign: 'center',
-                background: 'linear-gradient(135deg, #eff6ff, #f5f3ff)',
-                borderTop: '1px solid #e2e8f0',
-            }}>
-                <h2 style={{ fontSize: '48px', fontWeight: 900, color: '#0f172a', fontFamily: 'Plus Jakarta Sans', marginBottom: '16px' }}>
-                    Ready to prove what you can build?
-                </h2>
-                <p style={{ fontSize: '18px', color: '#64748b', marginBottom: '40px' }}>
-                    Join thousands of builders turning their work into opportunities.
-                </p>
-                <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
-                    <button onClick={() => onNavigate('onboarding')} className="btn-primary" style={{ padding: '16px 32px', fontSize: '16px' }}>
-                        Start Building Free <ArrowRight size={18} />
-                    </button>
-                    <button onClick={() => onNavigate('opportunities')} className="btn-secondary" style={{ padding: '16px 32px', fontSize: '16px' }}>
-                        Browse Opportunities
-                    </button>
-                </div>
-            </section>
+                    {/* Partners */}
+                    <div style={{ background: 'rgba(20,20,25,0.6)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
+                        <div style={{ position: 'absolute', bottom: -50, right: -50, width: 300, height: 300, background: 'radial-gradient(circle, rgba(139,92,246,0.2) 0%, transparent 70%)' }}></div>
+                        <div style={{ fontSize: '10px', fontWeight: 700, color: '#8b5cf6', letterSpacing: '1px', marginBottom: '32px' }}>POWERED BY BEST-IN-CLASS PARTNERS</div>
 
-            {/* Footer */}
-            <footer style={{
-                background: '#0a1628', padding: '40px 48px',
-                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-            }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <div style={{
-                        width: '28px', height: '28px', borderRadius: '7px',
-                        background: 'linear-gradient(135deg, #2563eb, #4f46e5)',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', flex: 1, alignItems: 'center' }}>
+                            <div style={{ fontSize: '24px', fontWeight: 800, color: '#a78bfa' }}>stripe atlas</div>
+                            <div style={{ fontSize: '20px', fontWeight: 600, color: 'white', display: 'flex', alignItems: 'center', gap: '8px' }}>aws <span style={{ fontWeight: 300 }}>activate</span></div>
+                            <div style={{ fontSize: '24px', fontWeight: 700, color: 'white' }}>Clerk</div>
+                            <div style={{ fontSize: '24px', fontWeight: 600, color: 'white' }}>OpenAI</div>
+                            <div style={{ fontSize: '22px', fontWeight: 700, color: 'white' }}><span style={{ border: '1px solid white', padding: '0 4px', borderRadius: '4px', marginRight: '6px' }}>N</span> Notion</div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Testimonials */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', marginBottom: '80px' }}>
+                    {[
+                        { quote: "Zuniva turned our 36-hour hack into a real company in 9 days.", name: "Arjun K.", title: "Founder, Promptly" },
+                        { quote: "The maturity score and investor introductions are game-changing.", name: "Maya R.", title: "Co-founder, DocuMind" },
+                        { quote: "Finally, a platform that understands builders and moves fast.", name: "Kevin L.", title: "CTO, LayerOps" }
+                    ].map((t, i) => (
+                        <div key={i} style={{ background: 'rgba(20,20,25,0.6)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                            <div style={{ fontSize: '32px', color: '#6d28d9', fontFamily: 'serif', lineHeight: 0.5, marginTop: '10px' }}>"</div>
+                            <p style={{ fontSize: '15px', color: '#d1d5db', lineHeight: 1.6, flex: 1 }}>{t.quote}</p>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundImage: `url(https://i.pravatar.cc/100?img=${i + 30})`, backgroundSize: 'cover' }} />
+                                <div>
+                                    <div style={{ fontSize: '14px', fontWeight: 600, color: 'white' }}>{t.name}</div>
+                                    <div style={{ fontSize: '12px', color: '#9ca3af' }}>{t.title}</div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+            </main>
+
+            {/* Footer / CTA */}
+            <footer style={{ position: 'relative', padding: '100px 48px 60px', textAlign: 'center', overflow: 'hidden' }}>
+                <div style={{
+                    position: 'absolute', bottom: '-20%', left: '10%', right: '10%', height: '50%',
+                    background: 'radial-gradient(ellipse at bottom, rgba(109, 40, 217, 0.4) 0%, transparent 70%)',
+                    zIndex: 0, pointerEvents: 'none'
+                }}></div>
+                <div style={{
+                    position: 'absolute', bottom: '-50%', left: '-10%', right: '-10%', height: '80%',
+                    borderTop: '1px solid rgba(139, 92, 246, 0.3)', borderRadius: '50%',
+                    zIndex: 0, pointerEvents: 'none', boxShadow: '0 -20px 60px rgba(109, 40, 217, 0.2)'
+                }}></div>
+
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                    <h2 style={{ fontSize: '40px', fontWeight: 700, marginBottom: '16px' }}>Ready to build what's next?</h2>
+                    <p style={{ fontSize: '16px', color: '#9ca3af', marginBottom: '40px' }}>Join thousands of builders shipping the future with Zuniva.</p>
+                    <button onClick={() => onNavigate('onboarding')} style={{
+                        background: '#6d28d9', color: 'white', border: 'none',
+                        padding: '16px 36px', borderRadius: '8px', fontSize: '16px', fontWeight: 600,
+                        display: 'inline-flex', alignItems: 'center', gap: '8px', cursor: 'pointer',
+                        boxShadow: '0 0 40px rgba(109, 40, 217, 0.6)'
                     }}>
-                        <span style={{ color: 'white', fontWeight: 800, fontSize: '13px', fontFamily: 'Plus Jakarta Sans' }}>Z</span>
-                    </div>
-                    <span style={{ color: 'white', fontWeight: 800, fontSize: '16px', fontFamily: 'Plus Jakarta Sans' }}>ZUNIVA</span>
+                        Launch Your Project Now <ArrowRight size={18} />
+                    </button>
                 </div>
-                <span style={{ color: '#475569', fontSize: '13px' }}>Build. Prove. Connect. © 2026</span>
-                <span style={{ color: '#1e3a6e', fontSize: '13px' }}>The Proof-of-Work Network for Emerging Talent</span>
             </footer>
         </div>
     );
