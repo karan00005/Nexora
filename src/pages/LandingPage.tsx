@@ -62,13 +62,20 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                         background: 'linear-gradient(135deg, #2563eb, #4f46e5)',
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                     }}>
-                        <span style={{ color: 'white', fontWeight: 800, fontSize: '15px', fontFamily: 'Plus Jakarta Sans' }}>N</span>
+                        <span style={{ color: 'white', fontWeight: 800, fontSize: '15px', fontFamily: 'Plus Jakarta Sans' }}>Z</span>
                     </div>
-                    <span style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 800, fontSize: '20px', color: '#0f172a', letterSpacing: '-0.5px' }}>NEXORA</span>
+                    <span style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 800, fontSize: '20px', color: '#0f172a', letterSpacing: '-0.5px' }}>ZUNIVA</span>
                 </div>
                 <nav style={{ display: 'flex', gap: '32px' }}>
-                    {['Features', 'For Students', 'For Companies', 'Challenges'].map(item => (
-                        <a key={item} href="#" style={{ color: '#64748b', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>{item}</a>
+                    {[
+                        { label: 'Features', action: 'opportunities' },
+                        { label: 'For Students', action: 'dashboard' },
+                        { label: 'For Companies', action: 'company-dashboard' },
+                        { label: 'Challenges', action: 'challenges' }
+                    ].map(item => (
+                        <button key={item.label} onClick={() => onNavigate(item.action)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#64748b', fontSize: '14px', fontWeight: 500, fontFamily: 'Inter' }}>
+                            {item.label}
+                        </button>
                     ))}
                 </nav>
                 <div style={{ display: 'flex', gap: '12px' }}>
@@ -175,7 +182,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                 <SectionHeading
                     tag="PLATFORM PREVIEW"
                     title="One profile. Your entire proof-of-work."
-                    subtitle="Students have projects, hackathons, certifications, GitHub repos — but it's scattered. NEXORA brings it all together."
+                    subtitle="Students have projects, hackathons, certifications, GitHub repos — but it's scattered. ZUNIVA brings it all together."
                 />
 
                 {/* Preview card */}
@@ -453,9 +460,9 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                         background: 'linear-gradient(135deg, #2563eb, #4f46e5)',
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                     }}>
-                        <span style={{ color: 'white', fontWeight: 800, fontSize: '13px', fontFamily: 'Plus Jakarta Sans' }}>N</span>
+                        <span style={{ color: 'white', fontWeight: 800, fontSize: '13px', fontFamily: 'Plus Jakarta Sans' }}>Z</span>
                     </div>
-                    <span style={{ color: 'white', fontWeight: 800, fontSize: '16px', fontFamily: 'Plus Jakarta Sans' }}>NEXORA</span>
+                    <span style={{ color: 'white', fontWeight: 800, fontSize: '16px', fontFamily: 'Plus Jakarta Sans' }}>ZUNIVA</span>
                 </div>
                 <span style={{ color: '#475569', fontSize: '13px' }}>Build. Prove. Connect. © 2026</span>
                 <span style={{ color: '#1e3a6e', fontSize: '13px' }}>The Proof-of-Work Network for Emerging Talent</span>

@@ -51,9 +51,9 @@ export default function Navbar({ onNavigate, currentPage, showToast, mode, onMod
                     borderRadius: '8px',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                 }}>
-                    <span style={{ color: 'white', fontWeight: 800, fontSize: '14px', fontFamily: 'Plus Jakarta Sans' }}>N</span>
+                    <span style={{ color: 'white', fontWeight: 800, fontSize: '14px', fontFamily: 'Plus Jakarta Sans' }}>Z</span>
                 </div>
-                <span style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 800, fontSize: '18px', color: '#0f172a', letterSpacing: '-0.5px' }}>NEXORA</span>
+                <span style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 800, fontSize: '18px', color: '#0f172a', letterSpacing: '-0.5px' }}>ZUNIVA</span>
             </div>
 
             {/* Nav Links */}

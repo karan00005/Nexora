@@ -61,7 +61,7 @@ export default function App() {
 
   const handleOnboardingComplete = () => {
     navigate('dashboard');
-    showToast('Welcome to NEXORA! Your builder profile is ready. 🚀');
+    showToast('Welcome to ZUNIVA! Your builder profile is ready. 🚀');
   };
 
   const handleProjectComplete = () => {

@@ -77,9 +77,9 @@ export default function OnboardingPage({ onComplete }: OnboardingProps) {
                         background: 'linear-gradient(135deg, #2563eb, #4f46e5)',
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                     }}>
-                        <span style={{ color: 'white', fontWeight: 800, fontSize: '14px', fontFamily: 'Plus Jakarta Sans' }}>N</span>
+                        <span style={{ color: 'white', fontWeight: 800, fontSize: '16px', fontFamily: 'Plus Jakarta Sans' }}>Z</span>
                     </div>
-                    <span style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 800, fontSize: '18px', color: '#0f172a' }}>NEXORA</span>
+                    <span style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 800, fontSize: '18px', color: '#0f172a' }}>ZUNIVA</span>
                 </div>
 
                 {/* Progress */}

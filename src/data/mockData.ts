@@ -1,4 +1,4 @@
-// Mock data for NEXORA prototype
+// Mock data for ZUNIVA prototype
 
 export const mockStudent = {
     id: '1',

@@ -44,7 +44,7 @@ export default function PostProblemPage({ onNavigate, showToast }: PostProblemPa
                     AI is finding your best matches...
                 </h2>
                 <p style={{ fontSize: '15px', color: '#64748b', marginBottom: '32px' }}>
-                    Analyzing proof-of-work profiles across the NEXORA network
+                    Analyzing proof-of-work profiles across the ZUNIVA network
                 </p>
                 <div style={{ display: 'flex', gap: '8px' }}>
                     {[0, 1, 2, 3, 4].map(i => (

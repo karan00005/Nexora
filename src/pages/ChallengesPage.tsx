@@ -122,7 +122,7 @@ export default function ChallengesPage({ onNavigate, showToast }: ChallengesPage
                     Host a Challenge
                 </h3>
                 <p style={{ fontSize: '14px', color: '#94a3b8', marginBottom: '20px' }}>
-                    Are you a company looking to discover emerging talent? Host a challenge on NEXORA.
+                    Are you a company looking to discover emerging talent? Host a challenge on ZUNIVA.
                 </p>
                 <button onClick={() => onNavigate('company-dashboard')} className="btn-primary" style={{ padding: '11px 24px' }}>
                     Host a Challenge
