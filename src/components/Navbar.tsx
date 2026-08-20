@@ -28,19 +28,11 @@ export default function Navbar({ onNavigate, currentPage, showToast, mode, onMod
     const links = mode === 'student' ? studentLinks : companyLinks;
 
     return (
-        <header style={{
-            position: 'sticky',
-            top: 0,
-            zIndex: 100,
-            background: 'rgba(5,5,5,0.8)',
-            backdropFilter: 'blur(12px)',
-            borderBottom: '1px solid rgba(255,255,255,0.05)',
-            padding: '0 24px',
-            height: '64px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '24px',
-        }}>
+        <header className="sticky top-0 z-50 flex items-center justify-between px-4 md:px-6 h-16 w-full gap-4 md:gap-6 backdrop-blur-md"
+            style={{
+                background: 'rgba(5,5,5,0.8)',
+                borderBottom: '1px solid rgba(255,255,255,0.05)',
+            }}>
             {/* Logo */}
             <div
                 onClick={() => onNavigate(mode === 'student' ? 'dashboard' : 'company-dashboard')}
@@ -60,7 +52,7 @@ export default function Navbar({ onNavigate, currentPage, showToast, mode, onMod
             </div>
 
             {/* Nav Links */}
-            <nav style={{ display: 'flex', alignItems: 'center', gap: '4px', flex: 1 }}>
+            <nav className="flex items-center gap-1 flex-1 overflow-x-auto no-scrollbar" style={{ msOverflowStyle: 'none', scrollbarWidth: 'none' }}>
                 {links.map(link => (
                     <button
                         key={link.key}
@@ -84,13 +76,10 @@ export default function Navbar({ onNavigate, currentPage, showToast, mode, onMod
             </nav>
 
             {/* Right side */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexShrink: 0 }}>
+            <div className="flex items-center gap-2 md:gap-3 shrink-0">
                 {/* Search */}
-                <div style={{
-                    display: 'flex', alignItems: 'center', gap: '8px',
-                    background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',
-                    borderRadius: '8px', padding: '7px 12px',
-                    width: '200px',
+                <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg border" style={{
+                    background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', width: '200px'
                 }}>
                     <Search size={14} color="#64748b" />
                     <input
@@ -102,14 +91,11 @@ export default function Navbar({ onNavigate, currentPage, showToast, mode, onMod
                 {/* Mode switcher */}
                 <button
                     onClick={onModeSwitch}
+                    className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-lg border text-xs font-semibold text-white transition-all duration-200"
                     style={{
-                        padding: '6px 12px', borderRadius: '8px',
-                        border: '1px solid rgba(255,255,255,0.1)',
+                        borderColor: 'rgba(255,255,255,0.1)',
                         background: mode === 'company' ? '#6d28d9' : 'rgba(255,255,255,0.05)',
-                        color: 'white',
-                        fontSize: '12px', fontWeight: 600, cursor: 'pointer',
-                        transition: 'all 0.2s ease', fontFamily: 'Inter',
-                        display: 'flex', alignItems: 'center', gap: '4px',
+                        fontFamily: 'Inter'
                     }}
                 >
                     {mode === 'student' ? '🏢 Company View' : '👤 Student View'}
@@ -150,10 +136,7 @@ export default function Navbar({ onNavigate, currentPage, showToast, mode, onMod
                 {/* Log Out */}
                 <button
                     onClick={onLogout}
-                    style={{
-                        padding: '7px', borderRadius: '8px', border: 'none', background: 'transparent',
-                        cursor: 'pointer', display: 'flex', alignItems: 'center', color: '#9ca3af'
-                    }}
+                    className="p-1.5 rounded-lg flex items-center text-gray-400 border-none bg-transparent cursor-pointer"
                     title="Log Out"
                 >
                     <LogOut size={16} />

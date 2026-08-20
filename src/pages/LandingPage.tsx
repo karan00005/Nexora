@@ -8,12 +8,13 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
     return (
         <div style={{ backgroundColor: '#050505', minHeight: '100vh', fontFamily: 'Inter, sans-serif', color: 'white', overflowX: 'hidden' }}>
             {/* Navbar */}
-            <header style={{
-                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                padding: '16px 48px', borderBottom: '1px solid rgba(255,255,255,0.05)',
-                position: 'sticky', top: 0, zIndex: 100, backdropFilter: 'blur(12px)',
-                background: 'rgba(5, 5, 5, 0.8)'
-            }}>
+            <header
+                className="flex items-center justify-between px-4 md:px-12 py-4"
+                style={{
+                    borderBottom: '1px solid rgba(255,255,255,0.05)',
+                    position: 'sticky', top: 0, zIndex: 100, backdropFilter: 'blur(12px)',
+                    background: 'rgba(5, 5, 5, 0.8)'
+                }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <div style={{
                         width: '32px', height: '32px', borderRadius: '8px',
@@ -56,10 +57,10 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                 </div>
             </header>
 
-            <main style={{ padding: '60px 48px', maxWidth: '1400px', margin: '0 auto' }}>
-                <div style={{ display: 'flex', gap: '40px', alignItems: 'center', marginBottom: '80px', flexWrap: 'wrap' }}>
+            <main className="px-6 py-12 md:px-12 md:py-16 max-w-[1400px] mx-auto">
+                <div className="flex flex-col xl:flex-row items-center gap-10 md:gap-16 mb-20">
                     {/* Hero Left Content */}
-                    <div style={{ flex: '1 1 100%', minWidth: '280px', maxWidth: '600px' }}>
+                    <div className="flex-1 w-full lg:max-w-[600px]">
                         <div style={{
                             display: 'inline-flex', alignItems: 'center', gap: '8px',
                             background: 'rgba(109, 40, 217, 0.1)', border: '1px solid rgba(139, 92, 246, 0.2)',
@@ -82,7 +83,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                             Zuniva transforms your hack into a real startup. We handle the infra, legal, and investor pipeline so you can focus on building.
                         </p>
 
-                        <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '48px' }}>
+                        <div className="flex flex-col sm:flex-row gap-4 items-center mb-12">
                             <button onClick={() => onNavigate('signup')} style={{
                                 background: '#6d28d9', color: 'white', border: 'none',
                                 padding: '14px 28px', borderRadius: '8px', fontSize: '15px', fontWeight: 600,
@@ -112,10 +113,10 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                     </div>
 
                     {/* Hero Right Visual */}
-                    <div style={{ flex: '1.2', minWidth: '500px', position: 'relative', height: '500px', display: 'flex', flexDirection: 'column' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', gap: '20px', alignItems: 'flex-start', flex: 1 }}>
+                    <div className="flex-1 w-full lg:min-w-[500px] relative flex flex-col mb-16 xl:mb-0">
+                        <div className="flex flex-col sm:flex-row justify-between gap-5 items-center sm:items-start flex-1 mb-8">
                             {/* Card 1 */}
-                            <div style={{ background: 'rgba(20,20,25,0.8)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px', padding: '16px', width: '200px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                            <div className="w-full sm:w-[200px]" style={{ background: 'rgba(20,20,25,0.8)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
                                 <div style={{ fontSize: '12px', color: '#9ca3af', display: 'flex', gap: '8px', alignItems: 'center' }}>
                                     <span style={{ color: 'white', fontWeight: 600 }}>1</span> Pull Request Merged
                                 </div>
@@ -135,7 +136,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                             </div>
 
                             {/* Card 2 - Incorporated */}
-                            <div style={{ background: 'rgba(20,20,25,0.8)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px', padding: '16px', width: '200px', display: 'flex', flexDirection: 'column', gap: '16px', transform: 'translateY(-20px)' }}>
+                            <div className="w-full sm:w-[200px] transform sm:-translate-y-5" style={{ background: 'rgba(20,20,25,0.8)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
                                 <div style={{ fontSize: '12px', color: '#9ca3af', display: 'flex', gap: '8px', alignItems: 'center' }}>
                                     <span style={{ color: 'white', fontWeight: 600 }}>2</span> Incorporated
                                 </div>
@@ -148,7 +149,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                             </div>
 
                             {/* Card 3 */}
-                            <div style={{ background: 'rgba(20,20,25,0.8)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px', padding: '16px', width: '200px', display: 'flex', flexDirection: 'column', gap: '16px', transform: 'translateY(-40px)' }}>
+                            <div className="w-full sm:w-[200px] transform sm:-translate-y-10" style={{ background: 'rgba(20,20,25,0.8)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
                                 <div style={{ fontSize: '12px', color: '#9ca3af', display: 'flex', gap: '8px', alignItems: 'center' }}>
                                     <span style={{ color: 'white', fontWeight: 600 }}>3</span> Seed Round
                                 </div>
@@ -168,16 +169,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                             </div>
                         </div>
 
-                        {/* Progression Line */}
-                        <div style={{ position: 'relative', height: '100px', width: '100%', display: 'flex', alignItems: 'center' }}>
-                            <div style={{ position: 'absolute', top: '50%', left: '10%', right: '10%', height: '2px', background: 'linear-gradient(90deg, rgba(139,92,246,0) 0%, rgba(139,92,246,1) 50%, rgba(139,92,246,0) 100%)', boxShadow: '0 0 15px rgba(139,92,246,0.8)' }} />
-                            {/* Dots */}
-                            <div style={{ position: 'absolute', top: 'calc(50% - 6px)', left: '15%', width: '12px', height: '12px', borderRadius: '50%', background: 'white', boxShadow: '0 0 10px #a78bfa' }} />
-                            <div style={{ position: 'absolute', top: 'calc(50% - 6px)', left: '50%', width: '12px', height: '12px', borderRadius: '50%', background: 'white', boxShadow: '0 0 10px #a78bfa' }} />
-                            <div style={{ position: 'absolute', top: 'calc(50% - 6px)', left: '85%', width: '12px', height: '12px', borderRadius: '50%', background: 'white', boxShadow: '0 0 10px #a78bfa' }} />
-                        </div>
-
-                        <div style={{ alignSelf: 'center', background: 'rgba(109,40,217, 0.2)', border: '1px solid rgba(139,92,246,0.3)', padding: '8px 20px', borderRadius: '999px', fontSize: '13px', color: '#ddd' }}>
+                        <div className="mt-8 text-center text-xs md:text-sm text-gray-300 bg-purple-900/20 border border-purple-500/30 py-2 px-5 rounded-full inline-block self-center">
                             We automate the journey.
                         </div>
                     </div>
@@ -270,9 +262,9 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                 </div>
 
                 {/* Bottom Wide Sections */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '24px' }}>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
                     {/* Legal & Infra */}
-                    <div style={{ background: 'rgba(20,20,25,0.6)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div className="bg-white/5 border border-white/5 rounded-3xl p-6 md:p-10 flex flex-col md:flex-row justify-between items-center relative overflow-hidden">
                         <div>
                             <div style={{ fontSize: '10px', fontWeight: 700, color: '#a78bfa', letterSpacing: '1px', marginBottom: '12px' }}>LEGAL & INFRASTRUCTURE</div>
                             <h3 style={{ fontSize: '28px', fontWeight: 600, marginBottom: '24px' }}>Everything, Automated</h3>
@@ -296,12 +288,12 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                             <div style={{ position: 'absolute', top: 20, right: 30, width: 120, height: 120, background: 'rgba(50,50,70,0.9)', border: '1px solid #666', borderRadius: '16px', transform: 'rotateX(55deg) rotateZ(-45deg)', boxShadow: '0 0 20px rgba(139,92,246,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                 <div style={{ width: 30, height: 30, background: '#a78bfa', borderRadius: '4px', transform: 'translateZ(30px)' }}></div>
                             </div>
-                            <div style={{ position: 'absolute', top: 0, right: 40, width: 120, height: 120, background: 'linear-gradient(135deg, #222, #111)', border: '1px solid #333', borderRadius: '16px', transform: 'rotateX(55deg) rotateZ(-45deg)' }}></div>
+                            <div className="absolute top-0 right-10 w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700 rounded-2xl md:rounded-3xl transform rotate-x-[55deg] -rotate-z-45"></div>
                         </div>
                     </div>
 
                     {/* Vefified Certificate Feature */}
-                    <div style={{ background: 'rgba(20,20,25,0.6)', border: '1px solid rgba(139, 92, 246, 0.3)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
+                    <div className="bg-white/5 border border-purple-500/30 rounded-3xl p-6 md:p-10 flex flex-col relative overflow-hidden">
                         <div style={{ position: 'absolute', top: -100, right: -100, width: 300, height: 300, background: 'radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 60%)' }}></div>
                         <div style={{ fontSize: '10px', fontWeight: 700, color: '#a78bfa', letterSpacing: '1px', marginBottom: '12px', zIndex: 1 }}>VERIFICATION & CREDENTIALS</div>
                         <h3 style={{ fontSize: '28px', fontWeight: 600, marginBottom: '24px', zIndex: 1 }}>Verified Builder Certificate</h3>
@@ -330,7 +322,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                     </div>
 
                     {/* Partners */}
-                    <div style={{ background: 'rgba(20,20,25,0.6)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
+                    <div className="col-span-1 lg:col-span-2 bg-white/5 border border-white/5 rounded-3xl p-6 md:p-10 flex flex-col relative overflow-hidden">
                         <div style={{ position: 'absolute', bottom: -50, right: -20, width: '100%', height: 300, background: 'radial-gradient(circle, rgba(139,92,246,0.2) 0%, transparent 70%)' }}></div>
                         <div style={{ fontSize: '10px', fontWeight: 700, color: '#8b5cf6', letterSpacing: '1px', marginBottom: '32px' }}>POWERED BY BEST-IN-CLASS PARTNERS</div>
 
@@ -349,7 +341,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
             </main>
 
             {/* Footer / CTA */}
-            <footer style={{ position: 'relative', padding: '100px 48px 60px', textAlign: 'center', overflow: 'hidden' }}>
+            <footer className="relative px-6 py-16 md:px-12 md:pt-24 md:pb-16 text-center overflow-hidden">
                 <div style={{
                     position: 'absolute', bottom: '-20%', left: '10%', right: '10%', height: '50%',
                     background: 'radial-gradient(ellipse at bottom, rgba(109, 40, 217, 0.4) 0%, transparent 70%)',
@@ -374,6 +366,6 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                     </button>
                 </div>
             </footer>
-        </div>
+        </div >
     );
 }
