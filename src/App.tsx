@@ -4,6 +4,8 @@ import { Toast } from './components/Toast';
 
 // Pages
 import LandingPage from './pages/LandingPage';
+import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
 import OnboardingPage from './pages/OnboardingPage';
 import StudentDashboard from './pages/StudentDashboard';
 import ProfilePage from './pages/ProfilePage';
@@ -21,6 +23,8 @@ import CompanyTalentPage from './pages/CompanyTalentPage';
 
 type Page =
   | 'landing'
+  | 'login'
+  | 'signup'
   | 'onboarding'
   | 'dashboard'
   | 'profile'
@@ -42,6 +46,7 @@ export default function App() {
   const [mode, setMode] = useState<'student' | 'company'>('student');
   const [toast, setToast] = useState<string | null>(null);
   const [updatedProofScore, setUpdatedProofScore] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const navigate = useCallback((page: string) => {
     setCurrentPage(page as Page);
@@ -72,13 +77,19 @@ export default function App() {
     setUpdatedProofScore(true);
   };
 
-  const showNavbar = currentPage !== 'landing' && currentPage !== 'onboarding';
+  const showNavbar = currentPage !== 'landing' && currentPage !== 'login' && currentPage !== 'signup' && currentPage !== 'onboarding';
 
   const renderPage = () => {
     const props = { onNavigate: navigate, showToast };
 
+    if (!isAuthenticated && !['landing', 'login', 'signup', 'onboarding'].includes(currentPage)) {
+      return <LandingPage onNavigate={navigate} />;
+    }
+
     switch (currentPage) {
       case 'landing': return <LandingPage onNavigate={navigate} />;
+      case 'login': return <LoginPage onLogin={() => { setIsAuthenticated(true); navigate('dashboard'); }} onNavigate={navigate} />;
+      case 'signup': return <SignupPage onSignup={() => { setIsAuthenticated(true); navigate('onboarding'); }} onNavigate={navigate} />;
       case 'onboarding': return <OnboardingPage onComplete={handleOnboardingComplete} />;
       case 'dashboard': return <StudentDashboard {...props} />;
       case 'profile': return <ProfilePage {...props} updatedScore={updatedProofScore ? 88 : undefined} />;
@@ -107,6 +118,11 @@ export default function App() {
           showToast={showToast}
           mode={mode}
           onModeSwitch={switchMode}
+          onLogout={() => {
+            setIsAuthenticated(false);
+            navigate('landing');
+            showToast('You have been logged out.');
+          }}
         />
       )}
 

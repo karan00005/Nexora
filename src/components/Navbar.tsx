@@ -1,4 +1,4 @@
-import { Bell, Search } from 'lucide-react';
+import { Bell, Search, LogOut } from 'lucide-react';
 
 interface NavbarProps {
     onNavigate: (page: string) => void;
@@ -6,9 +6,10 @@ interface NavbarProps {
     showToast: (msg: string) => void;
     mode: 'student' | 'company';
     onModeSwitch: () => void;
+    onLogout: () => void;
 }
 
-export default function Navbar({ onNavigate, currentPage, showToast, mode, onModeSwitch }: NavbarProps) {
+export default function Navbar({ onNavigate, currentPage, showToast, mode, onModeSwitch, onLogout }: NavbarProps) {
     const studentLinks = [
         { key: 'dashboard', label: 'Home' },
         { key: 'opportunities', label: 'Opportunities' },
@@ -142,6 +143,18 @@ export default function Navbar({ onNavigate, currentPage, showToast, mode, onMod
                     }}
                 >
                     {mode === 'student' ? 'AS' : 'NL'}
+                </button>
+
+                {/* Log Out */}
+                <button
+                    onClick={onLogout}
+                    style={{
+                        padding: '7px', borderRadius: '8px', border: 'none', background: 'transparent',
+                        cursor: 'pointer', display: 'flex', alignItems: 'center', color: '#64748b'
+                    }}
+                    title="Log Out"
+                >
+                    <LogOut size={16} />
                 </button>
             </div>
         </header>
