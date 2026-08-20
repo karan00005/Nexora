@@ -39,14 +39,14 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                 </nav>
 
                 <div style={{ display: 'flex', gap: '12px' }}>
-                    <button onClick={() => onNavigate('onboarding')} style={{
+                    <button onClick={() => onNavigate('login')} style={{
                         background: 'transparent', border: '1px solid #333', color: 'white',
                         padding: '8px 16px', borderRadius: '8px', fontSize: '13px', fontWeight: 500, cursor: 'pointer',
                         transition: 'all 0.2s'
                     }} onMouseOver={e => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'} onMouseOut={e => e.currentTarget.style.background = 'transparent'}>
                         Log in
                     </button>
-                    <button onClick={() => onNavigate('onboarding')} style={{
+                    <button onClick={() => onNavigate('signup')} style={{
                         background: '#6d28d9', border: 'none', color: 'white',
                         padding: '8px 16px', borderRadius: '8px', fontSize: '13px', fontWeight: 500, cursor: 'pointer',
                         boxShadow: '0 0 20px rgba(109, 40, 217, 0.4)', transition: 'all 0.2s'
@@ -83,7 +83,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                         </p>
 
                         <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '48px' }}>
-                            <button onClick={() => onNavigate('onboarding')} style={{
+                            <button onClick={() => onNavigate('signup')} style={{
                                 background: '#6d28d9', color: 'white', border: 'none',
                                 padding: '14px 28px', borderRadius: '8px', fontSize: '15px', fontWeight: 600,
                                 display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer',
@@ -91,7 +91,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                             }}>
                                 Launch Your Project <ArrowRight size={18} />
                             </button>
-                            <button style={{
+                            <button onClick={() => onNavigate('onboarding')} style={{
                                 background: 'rgba(255,255,255,0.03)', color: 'white', border: '1px solid rgba(255,255,255,0.1)',
                                 padding: '14px 28px', borderRadius: '8px', fontSize: '15px', fontWeight: 600,
                                 display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer',
@@ -354,7 +354,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                 <div style={{ position: 'relative', zIndex: 1 }}>
                     <h2 style={{ fontSize: '40px', fontWeight: 700, marginBottom: '16px' }}>Ready to build what's next?</h2>
                     <p style={{ fontSize: '16px', color: '#9ca3af', marginBottom: '40px' }}>Join thousands of builders shipping the future with Zuniva.</p>
-                    <button onClick={() => onNavigate('onboarding')} style={{
+                    <button onClick={() => onNavigate('signup')} style={{
                         background: '#6d28d9', color: 'white', border: 'none',
                         padding: '16px 36px', borderRadius: '8px', fontSize: '16px', fontWeight: 600,
                         display: 'inline-flex', alignItems: 'center', gap: '8px', cursor: 'pointer',
