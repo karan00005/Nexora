@@ -315,26 +315,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                     </div>
                 </div>
 
-                {/* Testimonials */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', marginBottom: '80px' }}>
-                    {[
-                        { quote: "Zuniva turned our 36-hour hack into a real company in 9 days.", name: "Arjun K.", title: "Founder, Promptly" },
-                        { quote: "The maturity score and investor introductions are game-changing.", name: "Maya R.", title: "Co-founder, DocuMind" },
-                        { quote: "Finally, a platform that understands builders and moves fast.", name: "Kevin L.", title: "CTO, LayerOps" }
-                    ].map((t, i) => (
-                        <div key={i} style={{ background: 'rgba(20,20,25,0.6)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                            <div style={{ fontSize: '32px', color: '#6d28d9', fontFamily: 'serif', lineHeight: 0.5, marginTop: '10px' }}>"</div>
-                            <p style={{ fontSize: '15px', color: '#d1d5db', lineHeight: 1.6, flex: 1 }}>{t.quote}</p>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundImage: `url(https://i.pravatar.cc/100?img=${i + 30})`, backgroundSize: 'cover' }} />
-                                <div>
-                                    <div style={{ fontSize: '14px', fontWeight: 600, color: 'white' }}>{t.name}</div>
-                                    <div style={{ fontSize: '12px', color: '#9ca3af' }}>{t.title}</div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+
 
             </main>
 
