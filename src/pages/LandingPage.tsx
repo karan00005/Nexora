@@ -57,9 +57,9 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
             </header>
 
             <main style={{ padding: '60px 48px', maxWidth: '1400px', margin: '0 auto' }}>
-                <div style={{ display: 'flex', gap: '64px', alignItems: 'center', marginBottom: '80px', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', gap: '40px', alignItems: 'center', marginBottom: '80px', flexWrap: 'wrap' }}>
                     {/* Hero Left Content */}
-                    <div style={{ flex: '1', minWidth: '400px' }}>
+                    <div style={{ flex: '1 1 100%', minWidth: '280px', maxWidth: '600px' }}>
                         <div style={{
                             display: 'inline-flex', alignItems: 'center', gap: '8px',
                             background: 'rgba(109, 40, 217, 0.1)', border: '1px solid rgba(139, 92, 246, 0.2)',
@@ -69,7 +69,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                             <span style={{ fontSize: '10px', background: 'rgba(139, 92, 246, 0.2)', padding: '2px 6px', borderRadius: '4px', color: '#c4b5fd' }}>BETA</span>
                         </div>
                         <h1 style={{
-                            fontSize: 'clamp(48px, 5vw, 68px)', fontWeight: 800, lineHeight: 1.1,
+                            fontSize: 'clamp(36px, 8vw, 68px)', fontWeight: 800, lineHeight: 1.1,
                             letterSpacing: '-2px', marginBottom: '24px'
                         }}>
                             From Weekend<br />Hackathon to<br />
@@ -134,7 +134,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                                 </div>
                             </div>
 
-                            {/* Card 2 */}
+                            {/* Card 2 - Incorporated */}
                             <div style={{ background: 'rgba(20,20,25,0.8)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px', padding: '16px', width: '200px', display: 'flex', flexDirection: 'column', gap: '16px', transform: 'translateY(-20px)' }}>
                                 <div style={{ fontSize: '12px', color: '#9ca3af', display: 'flex', gap: '8px', alignItems: 'center' }}>
                                     <span style={{ color: 'white', fontWeight: 600 }}>2</span> Incorporated
@@ -183,8 +183,8 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                     </div>
                 </div>
 
-                {/* Features 3 Columns */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px', marginBottom: '24px' }}>
+                {/* Features Multi-Columns */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '24px' }}>
 
                     {/* Feature 1 */}
                     <div style={{ background: 'rgba(20,20,25,0.6)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
@@ -270,7 +270,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                 </div>
 
                 {/* Bottom Wide Sections */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)', gap: '24px', marginBottom: '24px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '24px' }}>
                     {/* Legal & Infra */}
                     <div style={{ background: 'rgba(20,20,25,0.6)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
@@ -300,12 +300,41 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                         </div>
                     </div>
 
+                    {/* Vefified Certificate Feature */}
+                    <div style={{ background: 'rgba(20,20,25,0.6)', border: '1px solid rgba(139, 92, 246, 0.3)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
+                        <div style={{ position: 'absolute', top: -100, right: -100, width: 300, height: 300, background: 'radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 60%)' }}></div>
+                        <div style={{ fontSize: '10px', fontWeight: 700, color: '#a78bfa', letterSpacing: '1px', marginBottom: '12px', zIndex: 1 }}>VERIFICATION & CREDENTIALS</div>
+                        <h3 style={{ fontSize: '28px', fontWeight: 600, marginBottom: '24px', zIndex: 1 }}>Verified Builder Certificate</h3>
+
+                        <div style={{ background: '#111', borderRadius: '16px', padding: '24px', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', border: '1px solid rgba(255,255,255,0.05)', zIndex: 1 }}>
+                            <div style={{ width: '100%', maxWidth: '300px', background: 'linear-gradient(135deg, rgba(20,20,30,1), rgba(10,10,15,1))', border: '1px solid #333', borderRadius: '12px', padding: '20px', boxShadow: '0 20px 40px rgba(0,0,0,0.5)', position: 'relative', overflow: 'hidden' }}>
+                                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'linear-gradient(90deg, #7c3aed, #4f46e5)' }} />
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
+                                    <div>
+                                        <div style={{ fontSize: '18px', fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', letterSpacing: '-0.5px' }}>ZUNIVA</div>
+                                        <div style={{ fontSize: '8px', color: '#6b7280', letterSpacing: '2px', marginTop: '2px' }}>CERTIFIED BUILDER</div>
+                                    </div>
+                                    <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(16,185,129,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <CheckCircle2 size={16} color="#10b981" />
+                                    </div>
+                                </div>
+                                <div style={{ fontSize: '12px', color: '#9ca3af', marginBottom: '4px' }}>Issued to</div>
+                                <div style={{ fontSize: '20px', fontWeight: 600, color: 'white', marginBottom: '16px', fontFamily: 'serif' }}>Aarav Sharma</div>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                                    <div style={{ fontSize: '10px', color: '#6b7280' }}>ID: ZUN-9428-XV<br />Score: 86/100</div>
+                                    <div style={{ background: '#7c3aed', padding: '4px 8px', borderRadius: '4px', fontSize: '10px', fontWeight: 700, color: 'white' }}>VERIFIED</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style={{ fontSize: '14px', color: '#9ca3af', marginTop: '24px', zIndex: 1, lineHeight: 1.6 }}>Stand out. Every project built on Zuniva earns you a verifiable, shareable credentials certificate backed by on-chain mechanisms.</p>
+                    </div>
+
                     {/* Partners */}
                     <div style={{ background: 'rgba(20,20,25,0.6)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
-                        <div style={{ position: 'absolute', bottom: -50, right: -50, width: 300, height: 300, background: 'radial-gradient(circle, rgba(139,92,246,0.2) 0%, transparent 70%)' }}></div>
+                        <div style={{ position: 'absolute', bottom: -50, right: -20, width: '100%', height: 300, background: 'radial-gradient(circle, rgba(139,92,246,0.2) 0%, transparent 70%)' }}></div>
                         <div style={{ fontSize: '10px', fontWeight: 700, color: '#8b5cf6', letterSpacing: '1px', marginBottom: '32px' }}>POWERED BY BEST-IN-CLASS PARTNERS</div>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', flex: 1, alignItems: 'center' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: '20px', flex: 1, alignItems: 'center' }}>
                             <div style={{ fontSize: '24px', fontWeight: 800, color: '#a78bfa' }}>stripe atlas</div>
                             <div style={{ fontSize: '20px', fontWeight: 600, color: 'white', display: 'flex', alignItems: 'center', gap: '8px' }}>aws <span style={{ fontWeight: 300 }}>activate</span></div>
                             <div style={{ fontSize: '24px', fontWeight: 700, color: 'white' }}>Clerk</div>

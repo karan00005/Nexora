@@ -28,14 +28,14 @@ export default function StudentDashboard({ onNavigate, showToast }: DashboardPro
                 </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '16px', marginBottom: '32px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '32px' }}>
                 <StatCard value="86" label="Proof Score" icon="⚡" color="#2563eb" />
                 <StatCard value="8" label="Projects" icon="🔨" color="#4f46e5" />
                 <StatCard value="5" label="Challenges" icon="🏆" color="#f59e0b" />
                 <StatCard value="92%" label="Best Match" icon="🤖" color="#10b981" />
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '24px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
                 {/* LEFT COLUMN */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                     {/* Profile Strength */}
@@ -197,7 +197,7 @@ export default function StudentDashboard({ onNavigate, showToast }: DashboardPro
                             Your Proof-of-Work
                         </h3>
                         <p style={{ fontSize: '12px', color: '#94a3b8', marginBottom: '20px' }}>Everything you've built and proven</p>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '12px' }}>
                             {[
                                 { value: '8', label: 'Projects', icon: '🔨' },
                                 { value: '5', label: 'Challenges', icon: '⚡' },
@@ -274,6 +274,7 @@ export default function StudentDashboard({ onNavigate, showToast }: DashboardPro
                                 { label: 'Browse Challenges', action: 'challenges', icon: '🏆' },
                                 { label: 'Find Mentors', action: 'mentors', icon: '🧑‍🏫' },
                                 { label: 'Project Workspace', action: 'workspace', icon: '🔨' },
+                                { label: 'View My Certificate', action: 'certificate', icon: '📜' },
                             ].map(item => (
                                 <button
                                     key={item.action}
